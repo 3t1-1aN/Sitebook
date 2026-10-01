@@ -10,13 +10,21 @@ export type Entry = {
   family: string
   tags: string[]
   recipe: string
+  uiNotes: string
   status: EntryStatus
   error?: string
   createdAt: string
 }
 
+export type Family = {
+  name: string
+  definition: string
+  always: string[]
+  never: string[]
+}
+
 export type Catalog = {
-  families: string[]
+  families: Family[]
   entries: Entry[]
 }
 
@@ -27,6 +35,7 @@ export type ClassifyResult = {
   family: string
   tags: string[]
   recipe: string
+  uiNotes: string
 }
 
 export const CLASSIFY_FIELDS = [
@@ -36,6 +45,7 @@ export const CLASSIFY_FIELDS = [
   "family",
   "tags",
   "recipe",
+  "uiNotes",
 ] as const
 
 export const PATCH_FIELDS = CLASSIFY_FIELDS

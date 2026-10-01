@@ -1,13 +1,165 @@
 {
   "families": [
-    "Print-Tech Paper",
-    "Brutalist Editorial",
-    "Warm Editorial",
-    "Voxel Diorama",
-    "Dark Monolith",
-    "Waitlist Launch",
-    "Product UI",
-    "Unfiled"
+    {
+      "name": "Vast Quiet Cinematic",
+      "definition": "A monumental landscape with a small subject and empty sky or fog. Surrealism when the scene cannot be real, ethereal when it is mist and air, tenebrism when one dusk light does the contrast. Type stays thin.",
+      "always": [
+        "A full-bleed landscape with empty sky or fog.",
+        "The subject stays small and low.",
+        "One accent at most, or none.",
+        "Thin, small type."
+      ],
+      "never": [
+        "Product grids in the hero.",
+        "More than one accent color.",
+        "Bright buttons crowded into the sky.",
+        "Purple, neon, synthwave glow, or cybercore glitch."
+      ]
+    },
+    {
+      "name": "Nature Photo Hero",
+      "definition": "A real nature photograph fills the frame. Cottagecore when the land is rural and green, ethereal when it is fog or open air. A little interface may sit on the photo, such as a japandi-calm pill or one glassmorphic instrument.",
+      "always": [
+        "A full-bleed nature photograph.",
+        "Soft natural light.",
+        "Short type.",
+        "At most one button, or one small instrument on the photo."
+      ],
+      "never": [
+        "Painted scenery in place of the photograph.",
+        "A dark studio void.",
+        "A busy card grid over the photograph.",
+        "Purple gradients, neon, or synthwave color."
+      ]
+    },
+    {
+      "name": "Painted Pastoral",
+      "definition": "The scene is painted, not photographed. Cottagecore hills under an ethereal sky, with a serif headline.",
+      "always": [
+        "An illustrated landscape with a soft sky.",
+        "A serif headline.",
+        "One dark pill button.",
+        "Empty sky above the hills."
+      ],
+      "never": [
+        "A photoreal product shot.",
+        "A hard black void.",
+        "More than one accent.",
+        "Purple, neon, or glossy 3D."
+      ]
+    },
+    {
+      "name": "Dark Studio Product",
+      "definition": "Tenebrism for objects. One product in a black or charcoal void, spotlight or rim light, and a single accent or none.",
+      "always": [
+        "One product, isolated.",
+        "A near-black or charcoal ground.",
+        "Studio light, often a rim light or spotlight.",
+        "One accent color at most."
+      ],
+      "never": [
+        "A daylight room or a lifestyle scene.",
+        "More than one accent.",
+        "Colorful interface chrome.",
+        "Purple, neon, or cybercore glitch."
+      ]
+    },
+    {
+      "name": "Light Studio Product",
+      "definition": "One object on white, grey, or warm tan. Utilitarian when the page is specs and controls, luxury typography when a serif title carries it, glassmorphism when the cards are frosted, ethereal when the ground is mostly empty air.",
+      "always": [
+        "One product on a light ground.",
+        "Soft daylight or even studio light.",
+        "Empty ground around the object.",
+        "Quiet type."
+      ],
+      "never": [
+        "A black void behind the product.",
+        "Neon, or a second bright accent.",
+        "A crowded lifestyle scene.",
+        "Purple gradients."
+      ]
+    },
+    {
+      "name": "Dark Tech Particle",
+      "definition": "One particle form glowing on a near-black ground. Gold is the only light. This is not cybercore, synthwave, or an aurora rainbow.",
+      "always": [
+        "A near-black ground.",
+        "One particle or light form.",
+        "Gold as the only color.",
+        "Heavy type set off the form, with empty ground."
+      ],
+      "never": [
+        "Daylight, or a physical product photograph.",
+        "Blue or purple neon.",
+        "More than one accent color.",
+        "Iridescent aurora gradients or glitch."
+      ]
+    },
+    {
+      "name": "Split Mono Editorial",
+      "definition": "Brutalism cut into white and black. A giant index, vertical type, and one photograph crossing the seam.",
+      "always": [
+        "A hard white and black split.",
+        "A giant index number.",
+        "Vertical type on the dark side.",
+        "One photograph crossing the seam."
+      ],
+      "never": [
+        "Any color in the interface.",
+        "Rounded candy buttons.",
+        "A second photograph.",
+        "Gradients, including purple and neon."
+      ]
+    },
+    {
+      "name": "Mono Catalog",
+      "definition": "A black-and-white catalog. Luxury typography asks the questions. Studio stills sit on plain grounds.",
+      "always": [
+        "Black, white, and grey only.",
+        "Large serif questions.",
+        "Studio stills on plain grounds.",
+        "Alternating text and image blocks."
+      ],
+      "never": [
+        "Color of any kind.",
+        "Halftone dots or a warm paper texture.",
+        "Purple, neon, or synthwave color.",
+        "Frosted glass as the style."
+      ]
+    },
+    {
+      "name": "Earthen Palette",
+      "definition": "Wabi sabi color: forest green, cream, beige, and clay, with real leaves. The cards are set out like a bento.",
+      "always": [
+        "A deep green ground.",
+        "Cream type.",
+        "Earth-tone cards in sage, beige, and clay.",
+        "One quiet beige button."
+      ],
+      "never": [
+        "Neon, purple, or a pure black void.",
+        "A cool grey studio ground.",
+        "More than one bright accent.",
+        "A glossy 3D product render."
+      ]
+    },
+    {
+      "name": "Charcoal Utility",
+      "definition": "Utilitarian panels in charcoal, drawn in thin white ink. At most one warm metal accent. Rounded blocks are fine. This is not a bright bento on white.",
+      "always": [
+        "Charcoal panels.",
+        "White or near-white ink and hairlines.",
+        "Soft shadows and rounded panels.",
+        "One copper accent, or none."
+      ],
+      "never": [
+        "A second accent color.",
+        "Purple gradients or neon.",
+        "A bright marketing hero.",
+        "A photoreal nature background."
+      ]
+    }
   ],
   "entries": [
     {
@@ -15,18 +167,19 @@
       "filename": "user/9e1ad31f-16a4-408a-b8be-f927021cdcf6-Screenshot-From-2026-08-03-17-42-13.png",
       "checksum": "64b9b5907a21ce46d9090e171f35e6a6014e7af4bd4c0cde8091745237261a32",
       "title": "Playing",
-      "vibe": "dark luxury x rose-gold product",
-      "description": "A black storefront with a single rose-gold headphone hero and three color variants below.",
-      "family": "Product UI",
+      "vibe": "tenebrism x rose gold",
+      "description": "A tenebrist product plate: one metal object on a black reflective floor, with a single rose accent.",
+      "family": "Dark Studio Product",
       "tags": [
-        "pitch-black ground",
-        "rose-gold product hero",
+        "tenebrist black ground",
+        "spotlight product",
+        "rose-gold metal",
         "reflective floor",
         "white sans headline",
-        "dusty-rose CTA",
-        "Spanish store chrome"
+        "dusty-rose button"
       ],
-      "recipe": "[SUBJECT: rose-gold wireless over-ear headphones on a black reflective floor] dark luxury ecommerce hero, pitch-black ground, large white sans headline left, dusty-rose rectangular CTA, three small color-variant tiles below, no clutter, studio product light.",
+      "recipe": "[SUBJECT: over-ear headphones in a rose metal] rendered as a tenebrist studio product photograph on a black reflective floor, STRICT palette: pitch black and rose gold, one dusty rose note, no purple, no neon, no daylight, soft overhead studio light, object centered, empty black ground around it for typography, no text, no interface.",
+      "uiNotes": "Large white sans headline on the left. One dusty-rose rectangular button. Three small color tiles under the hero. A thin top bar.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:35.407Z"
     },
@@ -35,18 +188,19 @@
       "filename": "user/8ba5207a-9079-4846-a9cf-6fffd778a713-Screenshot-From-2026-08-03-17-46-39.png",
       "checksum": "298775c81cc92cbed027251d25c6b9dec88f542d2304787fd437842a819dce93",
       "title": "Haven",
-      "vibe": "nature hero x pill chrome",
-      "description": "A mountain-meadow photograph carries a floating pill nav and a short AI-product headline.",
-      "family": "Warm Editorial",
+      "vibe": "cottagecore x japandi",
+      "description": "A cottagecore landscape photograph with a calm japandi pill bar over the sky.",
+      "family": "Nature Photo Hero",
       "tags": [
-        "full-bleed landscape",
-        "pill nav bar",
+        "cottagecore meadow",
         "wildflower foreground",
-        "cabin meadow",
-        "dark sans on photo",
-        "orange mark"
+        "japandi pill bar",
+        "soft morning light",
+        "dark type on photo",
+        "one rounded button"
       ],
-      "recipe": "[SUBJECT: a mountain valley with wildflowers and a small wooden cabin] full-bleed nature hero, floating white pill navigation, short dark sans headline centered, white rounded Get Started button, soft morning light, orange hexagonal mark.",
+      "recipe": "[SUBJECT: a mountain meadow with wildflowers and a small cabin] rendered as a cottagecore nature photograph, STRICT palette: green grass, scattered wildflower color, blue-grey mountains, pale sky, no purple, no neon, soft morning light, horizon sitting low, wide empty sky for typography, no text, no interface.",
+      "uiNotes": "White pill navigation floating over the sky. Short dark sans headline, centered. One white rounded button. A small orange mark near the top.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:41.280Z"
     },
@@ -55,18 +209,19 @@
       "filename": "user/11fea6dd-c182-4698-8fca-6a55d791c024-Screenshot-From-2026-08-03-17-47-07.png",
       "checksum": "bd5dfcb8c640558d48b0fed38024e756067b8ec96ef351d33298056016be32bd",
       "title": "EOSAI",
-      "vibe": "cinematic surreal x agency",
-      "description": "A lone figure walks a water path toward a sky-filled arch under a ringed planet.",
-      "family": "Dark Monolith",
+      "vibe": "surrealism x tenebrism",
+      "description": "A surrealist plate in tenebrist dusk: a tiny subject, a monumental opening, and empty sky.",
+      "family": "Vast Quiet Cinematic",
       "tags": [
-        "surreal dusk sky",
-        "ringed planet",
-        "reflective water path",
-        "gold gradient word",
-        "thin white nav",
-        "circular arrow CTA"
+        "surreal scale",
+        "tenebrist dusk",
+        "mirror-still water",
+        "tiny centered subject",
+        "soft film grain",
+        "muted gold note"
       ],
-      "recipe": "[SUBJECT: a lone coated figure walking a narrow path across still water toward a monumental rectangular arch revealing bright sky, a ringed planet behind] cinematic agency hero, dusky blue-to-sunset sky, thin white sans nav, gold-gradient on one headline word, circular arrow CTA, vast empty water.",
+      "recipe": "[SUBJECT: a lone figure walking toward a monumental arch] rendered as a surrealist tenebrist matte painting, photoreal with soft film grain, STRICT palette: deep dusk blue fading to warm sunset orange at the horizon, one muted gold highlight, no purple, no neon, mirror-still water filling the lower third, subject tiny and centered low, soft even dusk light, huge empty sky above for typography, no text, no interface.",
+      "uiNotes": "Thin white sans navigation. One headline word in a gold gradient. One circular arrow button. Type stays small against the sky.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:42.920Z"
     },
@@ -75,18 +230,19 @@
       "filename": "user/1191bbae-33ee-48a0-ae21-dbe93582f4c7-Screenshot-From-2026-08-03-17-38-03.png",
       "checksum": "b7c58ec7279ac8daa49cff05d7fee1b8544fb79a951dc6b08e7f23768cc93f29",
       "title": "Classic",
-      "vibe": "warm glass x product cards",
-      "description": "A tan baseball cap sits on a sunlit field under frosted nav and three glass product tiles.",
-      "family": "Product UI",
+      "vibe": "glassmorphism x warm tan",
+      "description": "A warm daylight product plate with glassmorphic cards on a sunlit ground.",
+      "family": "Light Studio Product",
       "tags": [
-        "warm tan field",
-        "glassmorphism nav",
-        "embroidered cap hero",
-        "floating price chip",
-        "frosted product cards",
-        "rounded CTAs"
+        "glassmorphic cards",
+        "warm tan ground",
+        "frosted pill bar",
+        "sunlit texture",
+        "rounded tan button",
+        "soft product shadow"
       ],
-      "recipe": "[SUBJECT: a tan baseball cap embroidered CLASSIC EST 2024 on a sunlit textured field] warm product landing, translucent pill nav, large white sans headline, tan rounded Shop button, three frosted glass product cards below, diagonal sunlight.",
+      "recipe": "[SUBJECT: a tan baseball cap] sitting on a sunlit woven ground, STRICT palette: warm tan, cream, and soft brown shadow, no black void, no purple, no neon, diagonal daylight, object isolated in the upper area, empty tan ground for typography, no text, no interface.",
+      "uiNotes": "Translucent pill navigation. Large white sans headline. One tan rounded button. Three frosted glass product cards along the bottom. A small price chip on the hero object.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:46.392Z"
     },
@@ -95,18 +251,19 @@
       "filename": "user/f80129d0-9aae-4105-949e-097a056f7ba3-Screenshot-From-2026-08-03-17-39-15.png",
       "checksum": "d67d24356f604e3cdfa81e9dc10d08539b8161e42d0efbe2a0924ef2c85ad776",
       "title": "Orbyte",
-      "vibe": "dark tech x gold particle",
-      "description": "A gold particle sphere hangs over a plus-grid void with heavy futurist type.",
-      "family": "Dark Monolith",
+      "vibe": "particle glow x black grid",
+      "description": "A dark particle plate: one gold glow on a black grid, with heavy type beside it.",
+      "family": "Dark Tech Particle",
       "tags": [
+        "particle glow",
         "near-black void",
-        "gold particle sphere",
-        "plus-sign grid",
+        "faint plus grid",
         "block display type",
-        "fade-out headline",
-        "logo-wall footer"
+        "outlined buttons",
+        "single gold light"
       ],
-      "recipe": "[SUBJECT: a sphere of golden particles glowing against a black plus-sign grid] dark AI SaaS hero, heavy block display type left, small bracketed version labels, thin outlined CTAs, monochrome logo row at the foot, orange-gold only as light.",
+      "recipe": "[SUBJECT: a sphere made of small glowing particles] on a black field with a faint plus-sign grid, STRICT palette: near-black and one gold, no purple, no blue neon, no daylight, the gold is the only light, form centered, empty black beside it for typography, no text, no interface.",
+      "uiNotes": "Heavy block display type on the left, fading at the edge. Small bracketed labels. Two thin outlined buttons. A row of grey logos along the bottom.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:57.286Z"
     },
@@ -115,18 +272,19 @@
       "filename": "user/66cebc29-bda7-444c-8f42-787c50669e1e-Screenshot-From-2026-08-03-17-39-44.png",
       "checksum": "7c9405db6fd5edea2708d547d40c105b3c4e5783bbe398cc63677daf4becdf79",
       "title": "Zenox",
-      "vibe": "dark product x glass cards",
-      "description": "Black-and-red headphones sit over giant ghost type with floating glass spec cards.",
-      "family": "Product UI",
+      "vibe": "tenebrism x glassmorphism",
+      "description": "A tenebrist product plate with glassmorphic spec cards and a single red accent.",
+      "family": "Dark Studio Product",
       "tags": [
-        "black-red headphones",
+        "tenebrist black ground",
+        "glassmorphic cards",
+        "red accent spotlight",
         "ghost wordmark",
-        "glass info cards",
-        "red accent bar",
-        "white pill preorder",
-        "deep black ground"
+        "white pill button",
+        "one red accent"
       ],
-      "recipe": "[SUBJECT: black over-ear headphones with red accents at a dynamic angle] dark product hero, giant translucent brand word behind the object, frosted glass spec cards, one white pill Pre-Order button, deep black ground, red as the only accent.",
+      "recipe": "[SUBJECT: black over-ear headphones with a red accent] rendered as a tenebrist studio product photograph, STRICT palette: deep black, white highlight, and one red, no purple, no gold, no daylight, dramatic studio light, object large and angled, empty black ground for typography, no text, no interface.",
+      "uiNotes": "Giant translucent word behind the product. Two frosted glass cards with short specs. One white pill button. A thin red bar. The page stays deep black.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:04.012Z"
     },
@@ -135,18 +293,19 @@
       "filename": "user/63e42b93-39cf-491d-ab4b-3a92b601cd77-Screenshot-From-2026-08-03-17-50-30.png",
       "checksum": "625afca7366df3cf872c31a08766486e54dbf0c23db9e8b16fe2880387f2cef3",
       "title": "Saffron",
-      "vibe": "greyscale mountain x thin nav",
-      "description": "Snow peaks rise from fog under a light bar of all-caps links and a heavy SAFFRON mark.",
-      "family": "Brutalist Editorial",
+      "vibe": "ethereal x utilitarian",
+      "description": "An ethereal greyscale landscape with a utilitarian header and no buttons.",
+      "family": "Vast Quiet Cinematic",
       "tags": [
-        "greyscale mountains",
-        "fog base",
-        "snow peaks",
-        "light grey header bar",
+        "ethereal fog",
+        "greyscale peaks",
+        "utilitarian header",
+        "low contrast mist",
         "heavy black wordmark",
-        "all-caps links"
+        "no button"
       ],
-      "recipe": "[SUBJECT: jagged snow-capped peaks rising from a thick fog bank] greyscale editorial header, light grey nav bar, heavy black sans wordmark left, all-caps links right, no buttons, photograph is the page.",
+      "recipe": "[SUBJECT: jagged snow peaks rising out of fog] rendered as an ethereal greyscale landscape photograph, STRICT palette: black, white, and mid grey only, no color, no warm tint, soft overcast light, fog filling the lower half, peaks held in the upper frame, wide empty grey sky for typography, no text, no interface.",
+      "uiNotes": "Light grey bar across the top. Heavy black sans wordmark on the left. All-caps links on the right. No buttons. The photograph is the rest of the page.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:18.225Z"
     },
@@ -155,18 +314,19 @@
       "filename": "user/4971e180-5e2f-40d5-a40b-798dcc27c699-Screenshot-From-2026-08-03-18-13-37.png",
       "checksum": "cf4fb99df9cb394d9a559af051e5b4164868b4eb1f4c41e177ce4f85d6f267b3",
       "title": "LeanTrack",
-      "vibe": "split mono x story page",
-      "description": "A white-and-black split page with a giant 01, vertical sidebar type, and a photo overlapping the seam.",
-      "family": "Brutalist Editorial",
+      "vibe": "brutalism x split field",
+      "description": "A brutalist black-and-white split, with a giant index and one photo crossing the seam.",
+      "family": "Split Mono Editorial",
       "tags": [
-        "white-black split",
-        "giant 01",
-        "vertical sidebar type",
-        "overlapping photo",
-        "hamburger on black",
-        "pixel ornaments"
+        "brutalist split",
+        "black and white blocks",
+        "giant index number",
+        "vertical edge type",
+        "photo across the seam",
+        "no color"
       ],
-      "recipe": "[SUBJECT: a warm indoor desk with screens in front of a Christmas tree] split-field story page, left white with bold The Story and faint 01, right solid black with vertical dots, photograph overlaps the seam, pixel-square ornaments, no color in the chrome.",
+      "recipe": "[SUBJECT: a small indoor desk scene] as a brutalist photograph laid across a hard vertical split, left field pure white, right field pure black, STRICT palette: black and white only, no grey wash, no color, flat graphic light, the photograph is the only texture, empty white field for typography, no text, no interface.",
+      "uiNotes": "Bold title and a short paragraph on the white side. A giant faint index number. Vertical dots and vertical type on the black side. A menu mark at the top of the black field. Small pixel-square ornaments. No color in the interface.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:22.311Z"
     },
@@ -175,18 +335,19 @@
       "filename": "user/0f8ff97e-9c72-458f-ad35-465c1e693f56-Screenshot-From-2026-08-03-17-49-58.png",
       "checksum": "f68adb027ca01bd3c2b164e40afd4165124861eb614db4cb6ec4dd9ceb5af79c",
       "title": "Apreatif",
-      "vibe": "twilight mountain x display type",
-      "description": "Snow peaks at dusk carry a two-weight headline, the bold Mountains sitting on the ridgeline.",
-      "family": "Warm Editorial",
+      "vibe": "ethereal dusk x display type",
+      "description": "An ethereal dusk landscape with a two-weight headline resting on the horizon.",
+      "family": "Vast Quiet Cinematic",
       "tags": [
-        "dusk mountain photo",
+        "ethereal dusk",
         "teal-to-gold sky",
+        "snow peaks",
         "layered display type",
         "lowercase wordmark",
-        "vertical social rail",
-        "scroll cue"
+        "vertical edge rail"
       ],
-      "recipe": "[SUBJECT: snow-capped peaks at twilight with a teal-to-gold horizon] photography landing, lowercase white wordmark, two-weight centered headline with the bold word sitting on the ridge, small SEE WHOLE SERIES link, vertical social names, three-dot carousel.",
+      "recipe": "[SUBJECT: snow-capped peaks on a twilight horizon] rendered as an ethereal landscape photograph, STRICT palette: deep teal sky warming to pale gold at the horizon, white snow, dark rock, no purple, no neon, soft dusk light, ridge low in the frame, large empty sky above for typography, no text, no interface.",
+      "uiNotes": "Lowercase white wordmark on the left. Centered two-weight headline, with the bold word sitting on the ridge. A small text link under the headline. Vertical names on the right edge. A three-dot pager at the bottom.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:25.193Z"
     },
@@ -195,18 +356,19 @@
       "filename": "user/6f01b301-0851-4579-a19c-e04f9d5b749b-c6a2198ac2f1ba51fbcee8b56960648b.jpg",
       "checksum": "91811f2274d67e6c9cf065ab2e7dcaa6288fb0a675352a67b74023377f74d935",
       "title": "Lampz",
-      "vibe": "charcoal product x safety orange",
-      "description": "A matte black desk lamp sits on a charcoal void under cream outline type and one orange mark.",
-      "family": "Product UI",
+      "vibe": "tenebrism x safety orange",
+      "description": "A tenebrist charcoal void with one matte object and a single orange note.",
+      "family": "Dark Studio Product",
       "tags": [
-        "charcoal void ground",
-        "matte black lamp",
-        "cream geometric headline",
-        "outlined DARK",
+        "tenebrist charcoal",
+        "rim-lit object",
+        "cream geometric type",
+        "outlined second line",
         "safety-orange accent",
-        "rotated edge socials"
+        "empty void"
       ],
-      "recipe": "[SUBJECT: a matte black articulated desk lamp with an orange cord loop] charcoal void ground, cream geometric sans LUMIER over outlined DARK, tiny orange CTA, vertical -03, rotated socials, dramatic studio rim light.",
+      "recipe": "[SUBJECT: a matte black articulated desk lamp] rendered as a tenebrist studio product photograph in a charcoal void, STRICT palette: charcoal, cream, and one safety orange, no purple, no neon, no white seamless, dramatic rim light, object set to one side, empty charcoal for typography, no text, no interface.",
+      "uiNotes": "Cream geometric headline with a second outlined line. One tiny orange button. A vertical index number. Social names rotated along the edge.",
       "status": "ready",
       "createdAt": "2026-08-24T18:12:50.624Z"
     },
@@ -215,18 +377,19 @@
       "filename": "user/929b82b0-424e-470d-b919-0476d4547891-blackandwhite.jpg",
       "checksum": "99f4ba054f0938602e163a9002926a0a03a254a7dce4302ce23a7f067a5cca8d",
       "title": "Blend",
-      "vibe": "mono coffee x print catalog",
-      "description": "A black-and-white coffee brand page stacks serif questions against studio cups and bag stills.",
-      "family": "Brutalist Editorial",
+      "vibe": "luxury typography x mono stills",
+      "description": "A monochrome catalog: luxury typography questions alternating with studio stills.",
+      "family": "Mono Catalog",
       "tags": [
-        "strict black and white",
-        "large serif questions",
-        "studio cup stills",
+        "luxury serif questions",
+        "monochrome stills",
         "black product squares",
-        "Z-pattern story blocks",
-        "black Join button"
+        "alternating story blocks",
+        "small sans lines",
+        "no color"
       ],
-      "recipe": "[SUBJECT: stacked white coffee cups and gray coffee bags on stark black or white grounds] high-contrast monochrome catalog, oversized serif headlines, small sans metadata, three black product tiles, alternating text-and-still story, black Join field.",
+      "recipe": "[SUBJECT: stacked cups and a few bags] rendered as a black-and-white studio still, STRICT palette: black, white, and grey only, no color, no warm paper tint, no halftone dots, hard even studio light, objects isolated on a plain ground, empty ground around them for typography, no text, no interface.",
+      "uiNotes": "Oversized serif questions with small sans lines under them. Story blocks alternate text and stills. A row of black squares holds the product stills. One black button in a short join field. Strictly monochrome.",
       "status": "ready",
       "createdAt": "2026-08-24T18:12:56.995Z"
     },
@@ -235,18 +398,19 @@
       "filename": "user/80e07068-7154-4b55-9f3e-114cb5c277d2-20926da058f377c1c8c92797b9b3b2ce.jpg",
       "checksum": "9e203a7dcf94081d1f10fc9081ba207e344f7933c7b9760e7b058e162f0d92f6",
       "title": "HIDE",
-      "vibe": "split PDP x leather studio",
-      "description": "A black leather backpack fills the left pane of a white product page with serif title and pill CTA.",
-      "family": "Product UI",
+      "vibe": "luxury typography x light studio",
+      "description": "A split product plate: a light studio still beside a luxury serif title on white.",
+      "family": "Light Studio Product",
       "tags": [
+        "luxury serif title",
+        "light grey studio",
+        "black leather still",
         "split image and copy",
-        "light gray studio ground",
-        "black leather backpack",
-        "elegant serif title",
-        "circular color swatches",
-        "black pill ADD TO BAG"
+        "circular swatches",
+        "black pill button"
       ],
-      "recipe": "[SUBJECT: a black leather zip backpack on a light gray studio sweep] split PDP, 02/04 gallery chrome, white copy column, serif product title, bold price, four color dots, black pill ADD TO BAG, sparse HIDE nav.",
+      "recipe": "[SUBJECT: a black leather backpack] on a light grey studio sweep, STRICT palette: light grey, white, and black, no color accent, no purple, no lifestyle room, soft even studio light, object large and centered, empty grey around it for typography, no text, no interface.",
+      "uiNotes": "The page splits into an image pane and a white copy column. A gallery index sits on the image. Serif product title, a bold price, circular color swatches, and one black pill button. Sparse top links.",
       "status": "ready",
       "createdAt": "2026-08-24T18:13:20.072Z"
     },
@@ -255,18 +419,19 @@
       "filename": "user/0fa34107-e058-4e08-b796-76bd949580e8-Botanical-call-to-action.jpg",
       "checksum": "730dcd72266e7609e8615d4d6d62271de3e8fecee8b405cf6f6bc9f3a3f41bc3",
       "title": "Botanicals",
-      "vibe": "white air x rubber plant",
-      "description": "A single rubber-plant stem floats on white under a black sans headline and a quiet shop link.",
-      "family": "Warm Editorial",
+      "vibe": "ethereal x single stem",
+      "description": "An ethereal white plate with one plant stem and almost no interface.",
+      "family": "Light Studio Product",
       "tags": [
-        "stark white ground",
-        "rubber plant stem",
-        "bold black sans headline",
-        "text-link CTA",
-        "circular play mark",
-        "vertical 01/04"
+        "ethereal white ground",
+        "single plant stem",
+        "soft grey shadow",
+        "bold black sans",
+        "text link",
+        "circular play mark"
       ],
-      "recipe": "[SUBJECT: a green rubber-plant stem with glossy leaves isolated on white] airy plant hero, black sans Clean air in your home, To the webshop text link, circular play control, tiny two-column notes, 01/04 edge index, soft gray shadow.",
+      "recipe": "[SUBJECT: a single leafy plant stem] isolated on an ethereal white ground, STRICT palette: white, black, and leaf green, no tan, no purple, no dark scene, soft even light, a soft grey shadow, stem set to one side, generous empty white for typography, no text, no interface.",
+      "uiNotes": "Bold black sans headline. One text link instead of a filled button. A circular play mark. Two short note columns. A vertical index on the edge.",
       "status": "ready",
       "createdAt": "2026-08-24T18:13:26.810Z"
     },
@@ -275,18 +440,19 @@
       "filename": "user/fa0cb730-63b3-4270-aa1e-97df5c707a63-70b23bd8818817cda8a50628a453f20b.jpg",
       "checksum": "2526b2fcc4ec5467aef5080ec50864eaa868a101327016f8756c8d379b58c298",
       "title": "Elastos",
-      "vibe": "charcoal wallet x copper card",
-      "description": "A dark crypto wallet centers a copper Send card over a balance, QR receive pane, and transaction list.",
-      "family": "Product UI",
+      "vibe": "utilitarian x copper card",
+      "description": "A utilitarian charcoal plate with one copper card on a soft dark ground.",
+      "family": "Charcoal Utility",
       "tags": [
+        "utilitarian panels",
+        "copper card",
         "charcoal wave ground",
-        "copper Send card",
-        "large USD balance",
-        "rounded app chrome",
-        "QR receive pane",
-        "transaction table"
+        "rounded blocks",
+        "white figures",
+        "one metal accent"
       ],
-      "recipe": "[SUBJECT: a floating copper Send card with currency toggles on a charcoal dashboard] dark fintech wallet, organic gray waves, huge 8590 balance, rounded corners, QR receive column, ledger verify, bottom transaction rows, soft card shadow.",
+      "recipe": "[SUBJECT: a single rounded metal card] floating on a charcoal ground with a soft wave texture, STRICT palette: charcoal, warm copper, and white, no purple, no neon, no second accent, soft even light, card isolated near the center, empty charcoal around it for typography, no text, no interface.",
+      "uiNotes": "Large balance figure. Currency toggles on the copper card. A receive pane with a code block. A short ledger line. Rounded rows along the bottom. One copper accent only.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:04.169Z"
     },
@@ -295,18 +461,19 @@
       "filename": "user/e4845cb2-502d-4ab3-9237-2f45345a7fab-88f7eedeed621aed23604712a54825aa.jpg",
       "checksum": "969f1d17bf3e4543025783ea59e33a2b6433ee45070625b5f0827d6dd4c42805",
       "title": "Harmoniq",
-      "vibe": "serif SaaS x painted forest",
-      "description": "A serif AI headline sits over a lush painted forest with a pill demo button and an arch of app icons.",
-      "family": "Warm Editorial",
+      "vibe": "cottagecore x ethereal sky",
+      "description": "A painted cottagecore scene under an ethereal sky, with one serif headline.",
+      "family": "Painted Pastoral",
       "tags": [
-        "painted evergreen hills",
-        "soft sky-blue fade",
-        "elegant serif headline",
-        "dark pill Book a demo",
-        "arch of app tiles",
-        "raised-20M badge"
+        "cottagecore hills",
+        "ethereal sky",
+        "painted evergreens",
+        "serif headline",
+        "dark pill button",
+        "arc of small tiles"
       ],
-      "recipe": "[SUBJECT: a lush painted evergreen valley with rolling hills, soft clouds, and small birds] serene SaaS hero, sky fading into forest, large serif Your Haven for Seamless AI Solutions, dark pill Book a demo, arc of white app tiles, raised-round badge.",
+      "recipe": "[SUBJECT: rolling evergreen hills with a few small birds] rendered as a cottagecore painted illustration, not a photograph, STRICT palette: sky blue, cloud white, deep green, and pale mist, no purple, no neon, no hard black, even soft light, hills low in the frame, generous empty sky above for typography, no text, no interface.",
+      "uiNotes": "Large centered serif headline. One dark pill button. A shallow arc of small white tiles. One round badge at the left edge.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:07.045Z"
     },
@@ -315,18 +482,19 @@
       "filename": "user/9763eb4e-7eba-4cf0-b931-9e5eefca1346-496ae288c6159c17c798c316c024bf20.jpg",
       "checksum": "a82364a11b53372883c8c1e6f93c4fdae8a4cd9959954978d9306836d7e3baad",
       "title": "DSR",
-      "vibe": "gray studio x condensed type",
-      "description": "Matte black over-ears float on light gray with giant faint DSR letters and a pill price button.",
-      "family": "Product UI",
+      "vibe": "utilitarian x grey studio",
+      "description": "A utilitarian light-grey studio plate with one matte object and a giant faint word.",
+      "family": "Light Studio Product",
       "tags": [
-        "light gray studio",
-        "matte black headphones",
-        "giant faint DSR",
-        "condensed black title",
-        "left angle thumbs",
-        "pill price cart"
+        "utilitarian layout",
+        "light grey studio",
+        "matte black object",
+        "giant faint word",
+        "condensed title",
+        "pill button"
       ],
-      "recipe": "[SUBJECT: matte black over-ear headphones floating in a light gray studio] giant faint DSR behind the product, condensed black ATH-DSR7BT, 2.0m and 45mm specs, three circular angle thumbs, pill $299 add to cart, rounded window frame.",
+      "recipe": "[SUBJECT: matte black over-ear headphones] floating in a light grey studio, STRICT palette: light grey, black, and white, no color accent, no purple, no warm tan, soft even studio light, object centered, empty grey around it for typography, no text, no interface.",
+      "uiNotes": "Giant faint letters behind the product. Condensed black title. Two short spec lines. Three circular thumbnails on the left. One pill button. A rounded window frame.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:09.918Z"
     },
@@ -335,18 +503,19 @@
       "filename": "user/21741ad0-9c75-4bd4-9e8b-b5293e0f59a0-797e64303ef556e650043f6cb23b41fd.jpg",
       "checksum": "744944ac504cc6984a05dc1d065d356d9ca5e68a36c6fc3e57701fd1ca3997d4",
       "title": "Cowboy",
-      "vibe": "black-on-black x sale type",
-      "description": "A matte black e-bike almost vanishes into charcoal under a centered Back to Black headline.",
-      "family": "Dark Monolith",
+      "vibe": "tenebrism x rim light",
+      "description": "A tenebrist plate where the product shows up only as rim light.",
+      "family": "Dark Studio Product",
       "tags": [
+        "tenebrist rim light",
+        "matte black product",
         "pitch charcoal ground",
-        "matte black e-bike",
-        "white sans Back to Black",
-        "Black Friday label",
-        "white rounded SHOP NOW",
-        "sparse COWBOY nav"
+        "centered white sans",
+        "small label",
+        "white rounded button"
       ],
-      "recipe": "[SUBJECT: a cropped matte black electric bicycle defined only by rim light] near-black ground, centered white sans Back to Black, small Black Friday Only label, white rounded SHOP NOW, COWBOY. wordmark, quiet top nav.",
+      "recipe": "[SUBJECT: a bicycle cropped close, matte black] rendered as a tenebrist studio photograph, STRICT palette: near-black and a thin white rim light, no color accent, no purple, no daylight, the form defined only by rim light, object low and wide, empty black above for typography, no text, no interface.",
+      "uiNotes": "Centered white sans headline. A small label above it. One white rounded button. Sparse white wordmark and top links.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:11.515Z"
     },
@@ -355,18 +524,19 @@
       "filename": "user/8863a05a-e782-4908-b8e5-fcbaae0ac7ae-6343f48c5213722be7544949b7ea86b4.jpg",
       "checksum": "57d732bc1f748a17ef01d43d3a52f1c1a2039ff24f3589d7f74ce9341145cecd",
       "title": "Stats",
-      "vibe": "charcoal dash x white ink",
-      "description": "A dark admin shell stacks a white bar chart, three sparklines, and thin location progress bars.",
-      "family": "Product UI",
+      "vibe": "utilitarian x white ink",
+      "description": "A utilitarian charcoal plate of white hairline marks, with no second color.",
+      "family": "Charcoal Utility",
       "tags": [
-        "deep charcoal panels",
-        "thin white line icons",
-        "sidebar DASHBOARD",
-        "white bar chart",
-        "sparkline stat tiles",
-        "location progress bars"
+        "utilitarian panels",
+        "charcoal ground",
+        "white hairline marks",
+        "thin line icons",
+        "sidebar column",
+        "monochrome only"
       ],
-      "recipe": "[SUBJECT: a dark charcoal analytics dashboard with white hairline charts] left icon sidebar, Welcome Ali greeting, total issues 451, white vertical bars, three sparkline tiles, small-caps port names on thin progress bars, monochrome only.",
+      "recipe": "[SUBJECT: a short row of thin vertical bars] drawn as white ink on a deep charcoal ground, STRICT palette: charcoal and white only, no copper, no purple, no colored status marks, flat even light, marks small and isolated, empty charcoal around them for typography, no text, no interface.",
+      "uiNotes": "A left column of thin line icons and small-caps labels. One large white bar chart. Three sparkline tiles. Thin progress rows. Every panel is charcoal. No second color.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:15.089Z"
     },
@@ -375,18 +545,19 @@
       "filename": "user/c21af11d-a827-42eb-8ffb-9915494181cd-c9a441f97631454565f34a75ce6ce8be.jpg",
       "checksum": "8cfb8022fd1cd5114275dcb01e28462850b7319b2930ca3672686b6bcea904dc",
       "title": "Forest",
-      "vibe": "fog pines x glass pill",
-      "description": "A frosted vertical weather pill sits on a fogged pine forest with a circular tree-top window.",
-      "family": "Warm Editorial",
+      "vibe": "ethereal x glassmorphism",
+      "description": "An ethereal fog photograph used as the ground for one glassmorphic instrument.",
+      "family": "Nature Photo Hero",
       "tags": [
-        "fogged pine forest",
-        "frosted glass pill",
-        "circular cutout window",
-        "Forest title",
-        "16°C humidity chips",
-        "moon and wind icons"
+        "ethereal pine fog",
+        "glassmorphic pill",
+        "green-black mist",
+        "circular photo window",
+        "white type on glass",
+        "dim light"
       ],
-      "recipe": "[SUBJECT: a fogged coniferous forest photographed at dusk] tall frosted-glass weather pill, circular clear window of treetops, white sans Forest, 30 July, chips for 16°C 85% 4m/s, dim green-black mist light.",
+      "recipe": "[SUBJECT: a stand of pine trees in fog] rendered as an ethereal nature photograph, STRICT palette: deep green, black, and pale mist grey, no warm sunset, no purple, dim even light, trees filling the frame, a band of empty mist for typography, no text, no interface.",
+      "uiNotes": "One tall frosted-glass pill centered on the photograph. A circular clear window of treetops. A short white title, a date line, and three small stat chips. No other interface.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:27.432Z"
     },
@@ -395,18 +566,19 @@
       "filename": "user/940cc658-5b47-4d68-9980-78f599726dcc-9a367cc4207ce4aa1e49a5474a85719f.jpg",
       "checksum": "6e761a9a6b3a0eeca3a587d4b282cac863789802815a34ff515116364475704f",
       "title": "Rennale",
-      "vibe": "forest green x earth cards",
-      "description": "Real leaves overlay a forest-green mobile page above a four-icon bar and an earth-tone card grid.",
-      "family": "Warm Editorial",
+      "vibe": "wabi sabi x bento box",
+      "description": "A wabi sabi plate: forest greens and clay cards set out like a bento.",
+      "family": "Earthen Palette",
       "tags": [
-        "forest green ground",
-        "macro green and dried leaves",
-        "cream sans wordmark",
-        "beige pill CTA",
-        "line-art icon bar",
-        "sage brown cream tiles"
+        "wabi sabi greens",
+        "bento cards",
+        "macro leaf texture",
+        "cream type",
+        "beige pill button",
+        "sage and clay"
       ],
-      "recipe": "[SUBJECT: glossy green leaves and one dried brown leaf laid on a forest-green page] cream sans Rennale Renuelly, beige pill CTA, dark-green four-icon service bar, 3x2 rounded earth-tone cards, one canopy sunburst photo, soft card shadow.",
+      "recipe": "[SUBJECT: a few glossy green leaves and one dried leaf] laid on a flat wabi sabi green ground, STRICT palette: deep forest green, cream, beige, sage, and clay brown, no purple, no neon, no black void, soft even light, leaves grouped near the top, empty green ground for typography, no text, no interface.",
+      "uiNotes": "Cream sans wordmark. One beige pill button. A dark green bar with four line icons. A grid of rounded earth-tone cards, one of them a canopy photograph. Soft card shadows. Mobile width.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:39.389Z"
     },
@@ -415,18 +587,19 @@
       "filename": "user/56e8ea9d-dc75-4309-b81a-ddc94a97e82b-585643bd580c4789c301b4e90e3bea09.jpg",
       "checksum": "ec71b851617be68c33755dc044c67074c87877c9650e5b78f7679f793d96b3d4",
       "title": "Escape",
-      "vibe": "mist valley x inner-peace type",
-      "description": "A golden-hour mountain valley carries a centered Inner Peace headline, search pill, and press logos.",
-      "family": "Warm Editorial",
+      "vibe": "cottagecore x light academia",
+      "description": "A cottagecore valley photograph with light-academia type and one dark button.",
+      "family": "Nature Photo Hero",
       "tags": [
-        "misty mountain valley",
-        "golden-hour path",
-        "italic Inner Peace",
-        "pill search bar",
-        "Get early access",
-        "Forbes press row"
+        "cottagecore valley",
+        "light academia serif",
+        "golden-hour mist",
+        "green mountains",
+        "pill search field",
+        "one dark button"
       ],
-      "recipe": "[SUBJECT: rolling green mountains and a dirt path through a misty valley at golden hour] full-bleed nature hero, Escape wordmark, mixed sans and italic serif Inner Peace, rounded Search Now pill, black Get early access, monochrome press logos.",
+      "recipe": "[SUBJECT: a dirt path through a green mountain valley] rendered as a cottagecore nature photograph, STRICT palette: moss green, warm gold light, pale mist, and dark rock, no purple, no neon, golden-hour side light, path small and low, wide empty sky for typography, no text, no interface.",
+      "uiNotes": "Small wordmark at the top left. Centered headline mixing a sans line with an italic serif line. A rounded search field. One black rounded button. A row of grey press marks along the bottom.",
       "status": "ready",
       "createdAt": "2026-08-24T18:24:34.145Z"
     }

@@ -8,11 +8,14 @@ import type { Catalog, Entry } from "@/lib/types"
 import { CatalogGrid } from "./CatalogGrid"
 import { DetailModal } from "./DetailModal"
 import { DropZone } from "./DropZone"
+import { FamilyNotes } from "./FamilyNotes"
 
-async function loadCatalog(): Promise<Catalog> {
+type CatalogPayload = Catalog & { passcodeRequired?: boolean }
+
+async function loadCatalog(): Promise<CatalogPayload> {
   const response = await fetch("/api/catalog", { cache: "no-store" })
   if (!response.ok) throw new Error("Could not load catalog")
-  return (await response.json()) as Catalog
+  return (await response.json()) as CatalogPayload
 }
 
 export function CatalogApp() {
@@ -21,10 +24,13 @@ export function CatalogApp() {
   const [openId, setOpenId] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [notice, setNotice] = useState<string | null>(null)
+  const [passcodeRequired, setPasscodeRequired] = useState(false)
+  const [passcode, setPasscode] = useState("")
 
   const refresh = useCallback(async () => {
     const next = await loadCatalog()
-    setCatalog(next)
+    setPasscodeRequired(Boolean(next.passcodeRequired))
+    setCatalog({ families: next.families, entries: next.entries })
     return next
   }, [])
 
@@ -51,14 +57,21 @@ export function CatalogApp() {
     return ordered.filter((entry) => (entry.family || "Unfiled") === family)
   }, [family, ordered])
   const openEntry = ordered.find((entry) => entry.id === openId) ?? null
+  const selectedFamily =
+    catalog?.families.find((item) => item.name === family) ?? null
 
   async function onFiles(files: FileList | File[]) {
+    if (passcodeRequired && !passcode.trim()) {
+      setNotice("Enter the passcode.")
+      return
+    }
     setBusy(true)
     setNotice(null)
     try {
       for (const file of Array.from(files)) {
         const body = new FormData()
         body.append("file", file)
+        if (passcodeRequired) body.append("passcode", passcode)
         const response = await fetch("/api/ingest", { method: "POST", body })
         const payload = (await response.json()) as Entry & { error?: string }
         if (!response.ok) {
@@ -125,9 +138,16 @@ export function CatalogApp() {
             {catalog.entries.length} {catalog.entries.length === 1 ? "plate" : "plates"}
           </p>
         </div>
-        <DropZone busy={busy} notice={notice} onFiles={onFiles} />
+        <DropZone
+          busy={busy}
+          notice={notice}
+          passcodeRequired={passcodeRequired}
+          passcode={passcode}
+          onPasscode={setPasscode}
+          onFiles={onFiles}
+        />
         <div className="flex flex-wrap gap-2">
-          {["All", ...catalog.families].map((name) => {
+          {["All", ...catalog.families.map((item) => item.name)].map((name) => {
             const active = family === name
             return (
               <button
@@ -146,6 +166,12 @@ export function CatalogApp() {
           })}
         </div>
       </header>
+
+      {selectedFamily ? (
+        <div className="mb-5">
+          <FamilyNotes family={selectedFamily} showName />
+        </div>
+      ) : null}
 
       {visible.length === 0 ? (
         <p className="border border-dashed border-rule px-4 py-16 text-center text-[13px] text-ink-soft">

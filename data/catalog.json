@@ -178,7 +178,7 @@
         "white sans headline",
         "dusty-rose button"
       ],
-      "recipe": "[SUBJECT: over-ear headphones in a rose metal] rendered as a tenebrist studio product photograph on a black reflective floor, STRICT palette: pitch black and rose gold, one dusty rose note, no purple, no neon, no daylight, soft overhead studio light, object centered, empty black ground around it for typography, no text, no interface.",
+      "recipe": "[SUBJECT: over-ear headphones in a rose metal] rendered as a dark studio product photograph, not a lifestyle room and not an illustration. Sharp metal, a soft reflection on a black floor, fine grain. STRICT palette: void black #000000, near-black floor #0D080C, deep rose #955A52, rose metal #C17774, pale rose highlight #CB8880. Lighting: one soft overhead spot from the front, a faint reflection on the floor, no hard rim light. Camera: 50mm at about frame height. Texture: rose metal, matte black, fine grain, a soft mirror on the floor. Composition: the headphones sit large in the middle and lower 60% of the frame; the upper 30%, especially the left 40% of that band, is empty black for typography. Mood: quiet, premium, dark. Avoid: a bright room, daylight, a white sweep, chrome, purple, neon, text, logos, interface.",
       "uiNotes": "Large white sans headline on the left. One dusty-rose rectangular button. Three small color tiles under the hero. A thin top bar.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:35.407Z"
@@ -199,7 +199,7 @@
         "dark type on photo",
         "one rounded button"
       ],
-      "recipe": "[SUBJECT: a mountain meadow with wildflowers and a small cabin] rendered as a cottagecore nature photograph, STRICT palette: green grass, scattered wildflower color, blue-grey mountains, pale sky, no purple, no neon, soft morning light, horizon sitting low, wide empty sky for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a mountain meadow with wildflowers and a small cabin] rendered as a soft nature photograph, not a painting and not a flat illustration. STRICT palette: cool sky grey #C3CCD1, warm mist #DFDBDA, pale mountain #EAE0D7, meadow olive #54633B, pine shadow #213D26, wildflower ochre #CA8A52. Lighting: soft diffuse daylight, slightly warmer on the right, no hard sun. Camera: wide, across the meadow toward the peaks. Texture: photographic detail, soft haze on the peaks, no heavy grain. Composition: pale sky fills the top 30% and stays open for typography; the peaks sit in the middle; the cabin, pines, and ochre wildflowers fill the lower 50%, darker toward the bottom edge. Mood: calm, fresh, quiet. Avoid: a saturated blue sky, sunset orange, a dirt path in the foreground, purple, neon, text, logos, interface.",
       "uiNotes": "White pill navigation floating over the sky. Short dark sans headline, centered. One white rounded button. A small orange mark near the top.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:41.280Z"
@@ -220,7 +220,7 @@
         "soft film grain",
         "muted gold note"
       ],
-      "recipe": "[SUBJECT: a lone figure walking toward a monumental arch] rendered as a surrealist tenebrist matte painting, photoreal with soft film grain, STRICT palette: deep dusk blue fading to warm sunset orange at the horizon, one muted gold highlight, no purple, no neon, mirror-still water filling the lower third, subject tiny and centered low, soft even dusk light, huge empty sky above for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a lone figure standing at the base of a monumental arch] rendered as a surreal photoreal CGI matte painting, clean and polished, soft fine film grain. The arch is a smooth, featureless modern monolith (a tall rectangular slab of polished pale stone with an arched cutout), not ruins. A huge pale moon sits partly behind it, a thin dark orbital ring curves across the frame, two small floating spheres hang in the air, and soft cumulus clouds drift through the arch. STRICT palette: slate dusk blue #3B4A63, misty blue-grey #8A97AD, pale peach glow #F2D1B3, cream highlight #FBEFE1, muted gold #D9B47A on rim edges only. Cool overall, warm only as a soft glow behind the arch. Lighting: low sun behind the arch, backlit, soft diffuse glow, long reflections. Camera: 35mm wide, eye level just above the water. Composition: arch and moon in the right half, figure small at the arch base, mirror-still reflective water and a thin dark walkway in the lower quarter, left 45% of the frame calm hazy sky kept empty for typography. Mood: calm, quiet, dreamlike. Avoid: orange sunset, saturated sky, ancient or crumbling stone, rocks, centered symmetry, purple, neon, lens flare, stars, text, logos, interface.",
       "uiNotes": "Thin white sans navigation. One headline word in a gold gradient. One circular arrow button. Type stays small against the sky.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:42.920Z"
@@ -241,7 +241,7 @@
         "rounded tan button",
         "soft product shadow"
       ],
-      "recipe": "[SUBJECT: a tan baseball cap] sitting on a sunlit woven ground, STRICT palette: warm tan, cream, and soft brown shadow, no black void, no purple, no neon, diagonal daylight, object isolated in the upper area, empty tan ground for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a tan baseball cap] rendered as a warm daylight product photograph on a woven tan ground, not a white studio sweep and not an illustration. STRICT palette: sunlit gold #E6AD63, cap highlight #EFC284, woven tan #B77638, mid brown #8C4F24, deep shadow #2F1606. Lighting: daylight from the upper left, with the shadow falling toward the lower right. Camera: slightly above the cap, close, 50mm. Texture: visible woven fibers in the ground and on the cap, no gloss. Composition: the cap sits in the upper center, in about the top 40% of the frame; the left 30% and the lower woven ground stay open for typography. Mood: warm, simple, sunlit. Avoid: a white studio, a black void, purple, neon, text, logos, interface.",
       "uiNotes": "Translucent pill navigation. Large white sans headline. One tan rounded button. Three frosted glass product cards along the bottom. A small price chip on the hero object.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:46.392Z"
@@ -262,7 +262,7 @@
         "outlined buttons",
         "single gold light"
       ],
-      "recipe": "[SUBJECT: a sphere made of small glowing particles] on a black field with a faint plus-sign grid, STRICT palette: near-black and one gold, no purple, no blue neon, no daylight, the gold is the only light, form centered, empty black beside it for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a sphere of small glowing gold particles] rendered as a dark digital still, not a photograph and not a neon cyber scene. STRICT palette: void black #000000, dark brown #4B2914, amber #FC9B4F, gold #FEBD6A, pale gold #FDE077. Lighting: the sphere is the only light, a soft glow that falls off into black, no daylight. Camera: straight on, the sphere large. Texture: separate glowing particles, a faint plus-sign grid in the black, no film grain. Composition: the sphere sits in the upper center and fills the top 35%; the lower 55% and the left side stay empty black for typography. Mood: quiet, precise, dark. Avoid: purple, blue neon, aurora, a landscape, a product on a table, stars, text, logos, interface.",
       "uiNotes": "Heavy block display type on the left, fading at the edge. Small bracketed labels. Two thin outlined buttons. A row of grey logos along the bottom.",
       "status": "ready",
       "createdAt": "2026-08-23T00:21:57.286Z"
@@ -283,7 +283,7 @@
         "white pill button",
         "one red accent"
       ],
-      "recipe": "[SUBJECT: black over-ear headphones with a red accent] rendered as a tenebrist studio product photograph, STRICT palette: deep black, white highlight, and one red, no purple, no gold, no daylight, dramatic studio light, object large and angled, empty black ground for typography, no text, no interface.",
+      "recipe": "[SUBJECT: black over-ear headphones with a red accent] rendered as a dark studio product photograph, not an illustration and not a white studio shot. STRICT palette: deep black #090303, headphone black #1D1C20, red shadow #3E0000, red #E61E1D, bright red #F02F3A. Lighting: a soft frontal spot on the cups, the red catching the light, the rest falling to black. Camera: close, 50mm, about eye level with the headband. Texture: matte black, a small red accent, fine grain, no reflective floor. Composition: the headphones are large and centered, filling the middle 60%; black stays open above them and along the left 25% for typography. Mood: sharp, dark, minimal. Avoid: rose gold, a white studio, a full room, purple, neon, text, logos, interface.",
       "uiNotes": "Giant translucent word behind the product. Two frosted glass cards with short specs. One white pill button. A thin red bar. The page stays deep black.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:04.012Z"
@@ -304,7 +304,7 @@
         "heavy black wordmark",
         "no button"
       ],
-      "recipe": "[SUBJECT: jagged snow peaks rising out of fog] rendered as an ethereal greyscale landscape photograph, STRICT palette: black, white, and mid grey only, no color, no warm tint, soft overcast light, fog filling the lower half, peaks held in the upper frame, wide empty grey sky for typography, no text, no interface.",
+      "recipe": "[SUBJECT: jagged snow peaks rising out of fog] rendered as a greyscale landscape photograph, not a color grade and not an illustration. STRICT palette: pale grey sky #D2D7DE, mist grey #959CA2, snow grey #ABB2BC, rock grey #434951, crevice black #18232C. No warm tint and no second hue. Lighting: flat overcast, soft, low contrast, no sun. Camera: wide, the peaks low in the frame. Texture: photographic rock and fog, slight softness, no heavy grain. Composition: pale grey sky fills the top 35% and stays empty for typography; the jagged peaks and fog occupy the lower 65%, darkest near the bottom. Mood: cold, quiet, hushed. Avoid: blue sky, warm gold, sunset, high contrast, purple, neon, text, logos, interface.",
       "uiNotes": "Light grey bar across the top. Heavy black sans wordmark on the left. All-caps links on the right. No buttons. The photograph is the rest of the page.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:18.225Z"
@@ -325,7 +325,7 @@
         "photo across the seam",
         "no color"
       ],
-      "recipe": "[SUBJECT: a small indoor desk scene] as a brutalist photograph laid across a hard vertical split, left field pure white, right field pure black, STRICT palette: black and white only, no grey wash, no color, flat graphic light, the photograph is the only texture, empty white field for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a small warm indoor desk photograph] set on a hard vertical split of flat white and flat black, not a full-bleed photo and not a painting. STRICT palette: paper white #FFFFFF, off-white #FDFDFD, black #1A1A1A, photo brown #4F392E, warm photo highlight #906B59. The white field and the black field have no other color. Lighting: the two fields are flat; the photograph has ordinary indoor light. Camera: the split is a flat graphic; the desk photo is a close interior. Texture: flat digital color outside the photo, photographic detail only inside it. Composition: white fills the left 60% and black fills the right 40%, with a hard vertical seam; the desk photograph overlaps that seam in the vertical middle and is about a quarter of the width; the white left side stays open for typography. Mood: stark, blunt, editorial. Avoid: a soft gradient between the fields, color outside the photograph, a centered full-bleed photo, purple, neon, text, logos, interface.",
       "uiNotes": "Bold title and a short paragraph on the white side. A giant faint index number. Vertical dots and vertical type on the black side. A menu mark at the top of the black field. Small pixel-square ornaments. No color in the interface.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:22.311Z"
@@ -346,7 +346,7 @@
         "lowercase wordmark",
         "vertical edge rail"
       ],
-      "recipe": "[SUBJECT: snow-capped peaks on a twilight horizon] rendered as an ethereal landscape photograph, STRICT palette: deep teal sky warming to pale gold at the horizon, white snow, dark rock, no purple, no neon, soft dusk light, ridge low in the frame, large empty sky above for typography, no text, no interface.",
+      "recipe": "[SUBJECT: snow-capped peaks on a twilight horizon] rendered as a landscape photograph, not a painting. STRICT palette: dusk teal #4E6256, deeper teal #405550, horizon gold #C0AD82, snow cream #DCC38D, dark rock #0F2028. Lighting: low twilight, warm only along the horizon, cool teal above, soft haze. Camera: wide and distant, the ridge low in the frame. Texture: photographic, soft haze, no heavy grain. Composition: teal sky fills the upper 40% and stays empty for typography; gold and snow sit in the middle band; dark rock fills the bottom 30%. Mood: still, cold, faintly warm. Avoid: a blue noon sky, an orange sunset, a close foreground, purple, neon, text, logos, interface.",
       "uiNotes": "Lowercase white wordmark on the left. Centered two-weight headline, with the bold word sitting on the ridge. A small text link under the headline. Vertical names on the right edge. A three-dot pager at the bottom.",
       "status": "ready",
       "createdAt": "2026-08-23T00:22:25.193Z"
@@ -367,7 +367,7 @@
         "safety-orange accent",
         "empty void"
       ],
-      "recipe": "[SUBJECT: a matte black articulated desk lamp] rendered as a tenebrist studio product photograph in a charcoal void, STRICT palette: charcoal, cream, and one safety orange, no purple, no neon, no white seamless, dramatic rim light, object set to one side, empty charcoal for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a matte black articulated desk lamp] rendered as a studio product photograph in a charcoal void, not a room and not an illustration. STRICT palette: charcoal void #1F2630, deeper shadow #151C26, lamp metal #2E353F, cool highlight #828A97, safety orange #FD4C23. Lighting: a soft edge light from the upper left, the body mostly in shadow, the orange limited to one small cord. Camera: straight on, the lamp large but with space around it. Texture: matte metal, a smooth void, fine grain. Composition: the lamp sits in the center and fills about the middle 50%; charcoal stays empty across the top 25% and the outer corners for typography. Mood: spare, dark, precise. Avoid: a white studio, a lifestyle desk, chrome, extra orange, purple, neon, text, logos, interface.",
       "uiNotes": "Cream geometric headline with a second outlined line. One tiny orange button. A vertical index number. Social names rotated along the edge.",
       "status": "ready",
       "createdAt": "2026-08-24T18:12:50.624Z"
@@ -388,7 +388,7 @@
         "small sans lines",
         "no color"
       ],
-      "recipe": "[SUBJECT: stacked cups and a few bags] rendered as a black-and-white studio still, STRICT palette: black, white, and grey only, no color, no warm paper tint, no halftone dots, hard even studio light, objects isolated on a plain ground, empty ground around them for typography, no text, no interface.",
+      "recipe": "[SUBJECT: stacked white cups and a few dark bags] rendered as a black-and-white studio still, not a color photograph and not a halftone print. STRICT palette: paper white #FFFFFF, light grey #E2E3E5, mid grey #888888, charcoal #3D3D3D, black #232323. No warm paper tint. Lighting: even studio light, no color cast. Camera: straight-on product still, 50mm. Texture: smooth white ground, matte packaging, no halftone dots. Composition: the cups and bags sit in a tight group in the center, about 40% of the frame; white ground stays open around them, especially above, for typography. Mood: strict, quiet, catalog. Avoid: color, warm paper, halftone, a cafe scene, purple, neon, text, logos, interface.",
       "uiNotes": "Oversized serif questions with small sans lines under them. Story blocks alternate text and stills. A row of black squares holds the product stills. One black button in a short join field. Strictly monochrome.",
       "status": "ready",
       "createdAt": "2026-08-24T18:12:56.995Z"
@@ -409,7 +409,7 @@
         "circular swatches",
         "black pill button"
       ],
-      "recipe": "[SUBJECT: a black leather backpack] on a light grey studio sweep, STRICT palette: light grey, white, and black, no color accent, no purple, no lifestyle room, soft even studio light, object large and centered, empty grey around it for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a black leather backpack] rendered as a light studio product photograph, not a split web layout and not an illustration. STRICT palette: light grey #F4F4F4, edge grey #E2E2E2, bag black #1A171E, soft black #343339, leather highlight #B5B1AE. Lighting: soft even light from the front, a gentle shadow under the bag. Camera: straight on, 50mm. Texture: matte leather, a smooth grey ground, fine grain. Composition: the backpack sits left of center and fills the vertical middle; the right 40% of the grey field stays empty for typography. Mood: clean, quiet, premium. Avoid: a dark void, a lifestyle room, a color accent, purple, neon, text, logos, interface.",
       "uiNotes": "The page splits into an image pane and a white copy column. A gallery index sits on the image. Serif product title, a bold price, circular color swatches, and one black pill button. Sparse top links.",
       "status": "ready",
       "createdAt": "2026-08-24T18:13:20.072Z"
@@ -430,7 +430,7 @@
         "text link",
         "circular play mark"
       ],
-      "recipe": "[SUBJECT: a single leafy plant stem] isolated on an ethereal white ground, STRICT palette: white, black, and leaf green, no tan, no purple, no dark scene, soft even light, a soft grey shadow, stem set to one side, generous empty white for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a single leafy plant stem] rendered as a clean studio photograph on white, not an illustration and not a dark scene. STRICT palette: white field #F5F5F5, bright white #F8F8F8, shadow grey #D1D0CE, leaf green #4C9F1D, deep leaf #347B00. Lighting: soft even light, a gentle grey shadow falling down and to the left. Camera: straight on, the stem isolated. Texture: smooth white ground, natural leaf surface, no paper grain. Composition: the stem and leaves sit right of center and occupy about the right 45% through the vertical middle; the left 40% is empty white for typography. Mood: airy, quiet, simple. Avoid: a tan ground, a dark scene, a crowd of plants, purple, neon, text, logos, interface.",
       "uiNotes": "Bold black sans headline. One text link instead of a filled button. A circular play mark. Two short note columns. A vertical index on the edge.",
       "status": "ready",
       "createdAt": "2026-08-24T18:13:26.810Z"
@@ -451,7 +451,7 @@
         "white figures",
         "one metal accent"
       ],
-      "recipe": "[SUBJECT: a single rounded metal card] floating on a charcoal ground with a soft wave texture, STRICT palette: charcoal, warm copper, and white, no purple, no neon, no second accent, soft even light, card isolated near the center, empty charcoal around it for typography, no text, no interface.",
+      "recipe": "[SUBJECT: one rounded copper card] rendered as a dark product still on charcoal, not a dashboard and not a desk photograph. STRICT palette: charcoal #292C33, deeper charcoal #22252C, wave grey #3C4147, copper #DCA677, pale copper #E9B687. Lighting: soft light from above, a gentle sheen on the copper, no hard shadow. Camera: straight on, the card small in the frame. Texture: smooth metal, a soft wave in the charcoal, no paper grain. Composition: the copper card sits in the upper center, about 30% of the frame width; charcoal fills the rest, and the lower 45% stays empty for typography. Mood: calm, precise, dark. Avoid: a pale blue page, a second accent color, a table of rows, purple, neon, text, logos, interface.",
       "uiNotes": "Large balance figure. Currency toggles on the copper card. A receive pane with a code block. A short ledger line. Rounded rows along the bottom. One copper accent only.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:04.169Z"
@@ -472,7 +472,7 @@
         "dark pill button",
         "arc of small tiles"
       ],
-      "recipe": "[SUBJECT: rolling evergreen hills with a few small birds] rendered as a cottagecore painted illustration, not a photograph, STRICT palette: sky blue, cloud white, deep green, and pale mist, no purple, no neon, no hard black, even soft light, hills low in the frame, generous empty sky above for typography, no text, no interface.",
+      "recipe": "[SUBJECT: tall evergreen trees and rounded broadleaf trees with a few small birds] rendered as a crisp anime-style painted background in the manner of a Studio Ghibli film, not watercolor, not a photograph: clean painted edges, soft cel-shaded volume, no paper texture. STRICT palette: pure white #FFFFFF at the top, pale periwinkle #DCE3F7 to soft sky blue #A9C1EA, cloud white #F4F6FB with blue-grey cloud shadows #9FB3D6, deep pine green #1F3B2C, leaf green #4F7A3E, light grass #9DBB6A. Lighting: bright even daylight from the upper left. Composition: trees form a framing band only along the bottom 30% and rise up the far left and far right edges, with billowy clouds behind them at the bottom and faint distant blue mountains low in the center; the upper and middle 65% is a clean white-to-pale-blue gradient left empty for typography; a few small birds near the lower right. Mood: fresh, calm, optimistic. Avoid: watercolor, paper grain, rolling hills filling the frame, saturated blue sky across the top, hard black, purple, neon, photorealism, text, logos, interface.",
       "uiNotes": "Large centered serif headline. One dark pill button. A shallow arc of small white tiles. One round badge at the left edge.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:07.045Z"
@@ -493,7 +493,7 @@
         "condensed title",
         "pill button"
       ],
-      "recipe": "[SUBJECT: matte black over-ear headphones] floating in a light grey studio, STRICT palette: light grey, black, and white, no color accent, no purple, no warm tan, soft even studio light, object centered, empty grey around it for typography, no text, no interface.",
+      "recipe": "[SUBJECT: matte black over-ear headphones] rendered as a light grey studio product photograph, not a dark scene and not an illustration. STRICT palette: light grey #ECEDEF, mid grey #D3D4D9, shadow grey #D6D7DC, headphone black #272A2F, deep black #060606. Lighting: soft even studio light, a short shadow under the earcups, no color cast. Camera: straight on, 50mm, the headphones centered. Texture: matte plastic, a smooth grey ground, fine grain. Composition: the headphones sit in the center and fill about the middle 40%; grey stays empty above them and along both sides for typography. Mood: plain, calm, utilitarian. Avoid: letters behind the product, a dark void, warm tan, a color accent, purple, neon, text, logos, interface.",
       "uiNotes": "Giant faint letters behind the product. Condensed black title. Two short spec lines. Three circular thumbnails on the left. One pill button. A rounded window frame.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:09.918Z"
@@ -514,7 +514,7 @@
         "small label",
         "white rounded button"
       ],
-      "recipe": "[SUBJECT: a bicycle cropped close, matte black] rendered as a tenebrist studio photograph, STRICT palette: near-black and a thin white rim light, no color accent, no purple, no daylight, the form defined only by rim light, object low and wide, empty black above for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a matte black city e-bike seen from the side] rendered as a moody studio product photograph, 50mm lens at frame height, sharp focus. STRICT palette: charcoal backdrop #2A2A2A fading to near-black #111111 at the edges and bottom, matte black frame #1A1A1A, soft grey highlights #8C8C8C on top surfaces, no other colors. Lighting: one large soft overhead box light slightly behind the bike, giving a soft gradient glow on the backdrop behind the upper frame and a gentle sheen along the top tube, saddle and handlebar; not a hard rim light. Texture: matte powder coat, fine grain. Composition: the bike is huge and cropped by the bottom and side edges (wheels cut off), filling the lower 55%, saddle and handlebar near the vertical middle; the top 45% is a smooth empty charcoal gradient for a centered headline. Mood: premium, minimal, quiet. Avoid: pure black void, the whole bike visible, glossy chrome, rim-light silhouette, reflective floor, colored accents, daylight, text, logos, interface.",
       "uiNotes": "Centered white sans headline. A small label above it. One white rounded button. Sparse white wordmark and top links.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:11.515Z"
@@ -535,7 +535,7 @@
         "sidebar column",
         "monochrome only"
       ],
-      "recipe": "[SUBJECT: a short row of thin vertical bars] drawn as white ink on a deep charcoal ground, STRICT palette: charcoal and white only, no copper, no purple, no colored status marks, flat even light, marks small and isolated, empty charcoal around them for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a short row of thin white vertical bars] drawn as flat white marks on charcoal, not a photograph and not a full dashboard. STRICT palette: charcoal #3C3C3C, deeper charcoal #2C2C2C, mid charcoal #5F5F5F, off-white #F2F2F2, white #FFFFFF. No second hue. Lighting: flat and even, no directional light and no shadows. Camera: flat graphic, straight on, no lens. Texture: smooth flat color, hairline edges, no grain. Composition: a loose cluster of thin vertical white bars sits in the central 50% of the frame; charcoal stays empty around them, especially the left 25%, for typography. Mood: quiet, strict, utilitarian. Avoid: a light grey frame, a sidebar, icons, labels, a colored mark, copper, purple, neon, text, logos, interface.",
       "uiNotes": "A left column of thin line icons and small-caps labels. One large white bar chart. Three sparkline tiles. Thin progress rows. Every panel is charcoal. No second color.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:15.089Z"
@@ -556,7 +556,7 @@
         "white type on glass",
         "dim light"
       ],
-      "recipe": "[SUBJECT: a stand of pine trees in fog] rendered as an ethereal nature photograph, STRICT palette: deep green, black, and pale mist grey, no warm sunset, no purple, dim even light, trees filling the frame, a band of empty mist for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a stand of pine trees in fog] rendered as a dim nature photograph, not a painting and not a sunny meadow. STRICT palette: pale mist #D1D1D1, mist grey #C7C7C7, pine grey #313B32, deep green #21310D, near-black #0E1410. Lighting: dim and even, no sun, the fog brighter than the trunks. Camera: among the trunks, a normal lens, looking through the trees. Texture: photographic, soft in the fog, no heavy grain. Composition: trunks and fog fill the frame; the upper center is paler mist, about the top 25%, and is the quieter area for typography; the lower 70% is darker trunks. Mood: hushed, cool, enclosed. Avoid: a sunny meadow, a large empty sky, warm sunset, a clear blue sky, purple, neon, text, logos, interface.",
       "uiNotes": "One tall frosted-glass pill centered on the photograph. A circular clear window of treetops. A short white title, a date line, and three small stat chips. No other interface.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:27.432Z"
@@ -577,7 +577,7 @@
         "beige pill button",
         "sage and clay"
       ],
-      "recipe": "[SUBJECT: a few glossy green leaves and one dried leaf] laid on a flat wabi sabi green ground, STRICT palette: deep forest green, cream, beige, sage, and clay brown, no purple, no neon, no black void, soft even light, leaves grouped near the top, empty green ground for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a dense cluster of glossy green leaves and large dried tan leaves with visible veins] rendered as a clean, slightly stylized 3D render with smooth surfaces and soft realistic shadows. Background: a matte teal-green ground #3E7A68 with a large diagonal block of clay brown #7A4A35 cutting across the right side, subtle soft gradient. STRICT palette: teal green #3E7A68, deep forest green #1F4A3C, sage #8DB39A, clay brown #7A4A35, warm beige #D9B48F, cream #F2E6D3. Lighting: soft diffuse light from the upper left, gentle drop shadows under each leaf. Camera: top-down flat lay with a slight angle. Composition: leaves overlap in a lush cluster filling the right half and the top edge, some running off frame; the left 45% is smooth empty teal ground for typography. Mood: calm, natural, earthy, premium wellness. Avoid: rough concrete or paper texture, only a few sparse leaves, flat olive green, black, purple, neon, harsh shadows, text, logos, interface.",
       "uiNotes": "Cream sans wordmark. One beige pill button. A dark green bar with four line icons. A grid of rounded earth-tone cards, one of them a canopy photograph. Soft card shadows. Mobile width.",
       "status": "ready",
       "createdAt": "2026-08-24T18:23:39.389Z"
@@ -598,7 +598,7 @@
         "pill search field",
         "one dark button"
       ],
-      "recipe": "[SUBJECT: a dirt path through a green mountain valley] rendered as a cottagecore nature photograph, STRICT palette: moss green, warm gold light, pale mist, and dark rock, no purple, no neon, golden-hour side light, path small and low, wide empty sky for typography, no text, no interface.",
+      "recipe": "[SUBJECT: a green alpine meadow ridge with a few small wooden cabins and pine trees] rendered as a soft cinematic nature photograph, 35mm, shot from a high viewpoint looking out across layered misty mountains. STRICT palette: warm haze cream #F6E7D3, peach glow #EBC39B, soft gold sunlight #E3B26A, sunlit meadow green #7E9A4A, deep pine shadow #233226, distant mountain mauve-grey #B9A79B. Lighting: low sun just above the top-right ridge, backlit golden hour, heavy atmospheric haze washing out the distant layers. Texture: fine film grain, slight softness in the distance. Composition: the meadow ridge, cabins and trees sit in the bottom 30%, dark pines along the lower-left corner; the middle and upper 65% is hazy mountain silhouettes fading into a bright cream sky, kept clean and empty in the center for headline type. Mood: peaceful, warm, airy. Avoid: a dirt path in the foreground, close rocks, high contrast, saturated green, blue sky, purple, neon, text, logos, interface.",
       "uiNotes": "Small wordmark at the top left. Centered headline mixing a sans line with an italic serif line. A rounded search field. One black rounded button. A row of grey press marks along the bottom.",
       "status": "ready",
       "createdAt": "2026-08-24T18:24:34.145Z"

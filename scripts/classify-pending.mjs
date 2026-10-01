@@ -18,6 +18,12 @@ const usage = `List pending Blob plates, or write classifications back.
 List downloads each pending image into data/.classify-cache/ so you can look at it.
 Apply reads a JSON array. Each object needs id, title, vibe, description, family, tags, recipe, and uiNotes.
 
+A recipe is a background only. It starts with [SUBJECT: ...], then the medium and what it is not.
+It needs a STRICT palette of named hex colors, Lighting:, Composition: with frame percentages,
+Mood:, and Avoid:. The avoid list includes text, logos, and interface, plus the likely wrong
+medium, palette, and composition. Put nav, type, and buttons in uiNotes, not in the recipe.
+Match the tested EOSAI recipe in .cursor/commands/classify.md.
+
 BLOB_READ_WRITE_TOKEN must be set. This script does not call a classify API.
 Filesystem plates stay in data/catalog.json. Do not copy Blob plates into that file.`
 
@@ -135,9 +141,15 @@ function validate(item, names) {
     errors.push(`${id} tags have a dash. Use a comma or a hyphen.`)
   }
   if (!recipe.startsWith("[SUBJECT:")) errors.push(`${id} recipe must start with [SUBJECT:`)
-  if (!recipe.includes("STRICT palette")) errors.push(`${id} recipe needs a STRICT palette with bans`)
-  if (!recipe.includes("no text")) errors.push(`${id} recipe must say no text`)
-  if (!recipe.includes("no interface")) errors.push(`${id} recipe must say no interface`)
+  if (!recipe.includes("STRICT palette")) errors.push(`${id} recipe needs a STRICT palette of named hex colors`)
+  if (!/#[0-9A-Fa-f]{6}/.test(recipe)) errors.push(`${id} recipe needs hex colors like #3B4A63`)
+  for (const label of ["Lighting:", "Composition:", "Mood:", "Avoid:"]) {
+    if (!recipe.includes(label)) errors.push(`${id} recipe needs ${label}`)
+  }
+  const avoid = recipe.slice(recipe.indexOf("Avoid:")).toLowerCase()
+  for (const word of ["text", "logos", "interface"]) {
+    if (!avoid.includes(word)) errors.push(`${id} recipe Avoid list must include ${word}`)
+  }
   return {
     errors,
     filed: {

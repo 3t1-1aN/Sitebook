@@ -1,9 +1,11 @@
 import { BlobNotFoundError, del, get, list, put } from "@vercel/blob"
 
+import { mergeHiddenId, parseHiddenIds } from "./delete-plan"
 import type { Entry, EntryStatus } from "./types"
 
 export const BLOB_IMAGE_PREFIX = "blob/"
 export const BLOB_ENTRY_PREFIX = "entries/"
+export const HIDDEN_BLOB_PATH = "meta/hidden.json"
 
 const PRIVATE = { access: "private" as const }
 
@@ -66,6 +68,24 @@ export async function putBlobImage(
 export async function deleteBlobPlate(entry: Entry): Promise<void> {
   await deleteQuiet(entry.filename)
   await deleteQuiet(entryBlobPath(entry.id))
+}
+
+export async function readHiddenIds(): Promise<string[]> {
+  const raw = await readBlobJson(HIDDEN_BLOB_PATH)
+  return parseHiddenIds(raw)
+}
+
+export async function addHiddenId(id: string): Promise<void> {
+  const current = await readHiddenIds()
+  const next = mergeHiddenId(current, id)
+  if (next === current) return
+  await put(HIDDEN_BLOB_PATH, JSON.stringify({ ids: next }), {
+    ...PRIVATE,
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/json",
+    cacheControlMaxAge: 60,
+  })
 }
 
 export async function readBlobImage(

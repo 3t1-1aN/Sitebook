@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 
 import { deleteEntry, patchEntry } from "@/lib/catalog"
+import { checkPasscode } from "@/lib/passcode"
 import type { Entry } from "@/lib/types"
 
 export const runtime = "nodejs"
@@ -44,11 +45,43 @@ export async function PATCH(
 }
 
 export async function DELETE(
-  _request: Request,
+  request: Request,
   context: { params: Promise<{ id: string }> },
 ) {
+  let passcode: unknown
+  try {
+    const body = (await request.json()) as { passcode?: unknown }
+    passcode = body.passcode
+  } catch {
+    passcode = undefined
+  }
+
+  const passcodeError = checkPasscode(passcode)
+  if (passcodeError) {
+    return NextResponse.json(
+      { error: passcodeError },
+      { status: 401, headers: { "Cache-Control": "no-store" } },
+    )
+  }
+
   const { id } = await context.params
-  const removed = await deleteEntry(id)
-  if (!removed) return NextResponse.json({ error: "Not found" }, { status: 404 })
-  return NextResponse.json({ ok: true })
+  try {
+    const removed = await deleteEntry(id)
+    if (!removed) {
+      return NextResponse.json(
+        { error: "Not found" },
+        { status: 404, headers: { "Cache-Control": "no-store" } },
+      )
+    }
+    return NextResponse.json(
+      { ok: true },
+      { headers: { "Cache-Control": "no-store" } },
+    )
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not delete"
+    return NextResponse.json(
+      { error: message },
+      { status: 500, headers: { "Cache-Control": "no-store" } },
+    )
+  }
 }

@@ -3,13 +3,16 @@ import { mkdir, readFile, rename, unlink, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 import {
+  addHiddenId,
   blobEnabled,
   deleteBlobPlate,
   listBlobEntries,
   putBlobEntry,
   putBlobImage,
   readBlobEntry,
+  readHiddenIds,
 } from "./blob-entries"
+import { planDelete } from "./delete-plan"
 import type { Catalog, ClassifyResult, Entry, Family } from "./types"
 import { PATCH_FIELDS } from "./types"
 
@@ -41,17 +44,30 @@ export async function readCatalog(): Promise<Catalog> {
   return JSON.parse(raw) as Catalog
 }
 
+async function hiddenIds(): Promise<Set<string>> {
+  if (!blobEnabled()) return new Set()
+  try {
+    return new Set(await readHiddenIds())
+  } catch (error) {
+    console.error("Hidden list could not be read", error)
+    return new Set()
+  }
+}
+
 export async function readMergedCatalog(): Promise<Catalog> {
   const catalog = await readCatalog()
   if (!blobEnabled()) return catalog
+  const hidden = await hiddenIds()
   try {
     const extra = await listBlobEntries()
     const ids = new Set(catalog.entries.map((entry) => entry.id))
-    const fresh = extra.filter((entry) => !ids.has(entry.id))
-    return { ...catalog, entries: [...catalog.entries, ...fresh] }
+    const fresh = extra.filter((entry) => !ids.has(entry.id) && !hidden.has(entry.id))
+    const visible = catalog.entries.filter((entry) => !hidden.has(entry.id))
+    return { ...catalog, entries: [...visible, ...fresh] }
   } catch (error) {
     console.error("Blob entries could not be read", error)
-    return catalog
+    const visible = catalog.entries.filter((entry) => !hidden.has(entry.id))
+    return { ...catalog, entries: visible }
   }
 }
 
@@ -109,7 +125,10 @@ export async function ingestPending(input: {
   return withCatalogLock(async () => {
     const catalog = await readCatalog()
     const checksum = sha256(input.bytes)
-    const existing = catalog.entries.find((entry) => entry.checksum === checksum)
+    const hidden = await hiddenIds()
+    const existing = catalog.entries.find(
+      (entry) => entry.checksum === checksum && !hidden.has(entry.id),
+    )
     if (existing) {
       return { duplicate: true, existingId: existing.id }
     }
@@ -259,13 +278,27 @@ export async function deleteEntry(id: string): Promise<boolean> {
   return withCatalogLock(async () => {
     const catalog = await readCatalog()
     const index = catalog.entries.findIndex((item) => item.id === id)
-    if (index === -1) {
-      if (!blobEnabled()) return false
-      const blobEntry = await readBlobEntry(id)
+    const inRepo = index !== -1
+    const blobEntry = blobEnabled() && !inRepo ? await readBlobEntry(id) : null
+    const plan = planDelete({
+      blobConfigured: blobEnabled(),
+      inRepo,
+      inBlobStore: Boolean(blobEntry),
+    })
+
+    if (plan === "hide-seed") {
+      await addHiddenId(id)
+      return true
+    }
+
+    if (plan === "delete-blob") {
       if (!blobEntry) return false
       await deleteBlobPlate(blobEntry)
       return true
     }
+
+    if (plan === "missing") return false
+
     const [removed] = catalog.entries.splice(index, 1)
     await writeCatalog(catalog)
     try {

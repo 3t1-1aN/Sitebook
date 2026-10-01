@@ -8,5 +8,8 @@ export const dynamic = "force-dynamic"
 
 export async function GET() {
   const catalog = await readMergedCatalog()
-  return NextResponse.json({ ...catalog, passcodeRequired: passcodeRequired() })
+  return NextResponse.json(
+    { ...catalog, passcodeRequired: passcodeRequired() },
+    { headers: { "Cache-Control": "no-store" } },
+  )
 }

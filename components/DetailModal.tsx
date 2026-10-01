@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { copyBrief, copyImagePrompt } from "@/lib/copy"
 import type { Entry, Family } from "@/lib/types"
@@ -14,14 +14,20 @@ type EntryPatch = Partial<
 type DetailModalProps = {
   entry: Entry
   families: Family[]
+  passcodeRequired: boolean
+  passcode: string
+  onPasscode: (value: string) => void
   onClose: () => void
-  onChange: (id: string, patch: EntryPatch) => Promise<void>
-  onDelete: (id: string) => Promise<void>
+  onChange: (id: string, patch: EntryPatch) => Promise<string | null>
+  onDelete: (id: string) => Promise<string | null>
 }
 
 export function DetailModal({
   entry,
   families,
+  passcodeRequired,
+  passcode,
+  onPasscode,
   onClose,
   onChange,
   onDelete,
@@ -36,20 +42,18 @@ export function DetailModal({
   const [tagDraft, setTagDraft] = useState("")
   const [copied, setCopied] = useState<string | null>(null)
   const [confirmDelete, setConfirmDelete] = useState(false)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
+  const [editError, setEditError] = useState<string | null>(null)
+  const [deleting, setDeleting] = useState(false)
 
-  useEffect(() => {
-    setTitle(entry.title)
-    setVibe(entry.vibe)
-    setDescription(entry.description)
-    setFamily(entry.family)
-    setTags(entry.tags)
-    setRecipe(entry.recipe)
-    setUiNotes(entry.uiNotes)
-    setConfirmDelete(false)
-  }, [entry])
-
-  async function persist(patch: EntryPatch) {
-    await onChange(entry.id, patch)
+  async function persist(patch: EntryPatch, rollback: () => void) {
+    const error = await onChange(entry.id, patch)
+    if (error) {
+      rollback()
+      setEditError(error)
+      return
+    }
+    setEditError(null)
   }
 
   async function copy(label: string, text: string) {
@@ -64,10 +68,15 @@ export function DetailModal({
       setTagDraft("")
       return
     }
-    const updated = [...tags, next]
+    const previous = tags
+    const draft = tagDraft
+    const updated = [...previous, next]
     setTags(updated)
     setTagDraft("")
-    void persist({ tags: updated })
+    void persist({ tags: updated }, () => {
+      setTags(previous)
+      setTagDraft(draft)
+    })
   }
 
   const displayTitle = title || (entry.status === "pending" ? "Unclassified" : "Untitled")
@@ -95,21 +104,33 @@ export function DetailModal({
               id="entry-title"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
-              onBlur={() => persist({ title })}
+              onBlur={() => {
+                if (title === entry.title) return
+                const previous = entry.title
+                void persist({ title }, () => setTitle(previous))
+              }}
               placeholder="Unclassified"
               className="w-full bg-transparent font-serif text-[3rem] leading-[1.05] tracking-tight text-ink outline-none"
             />
             <input
               value={vibe}
               onChange={(event) => setVibe(event.target.value)}
-              onBlur={() => persist({ vibe })}
+              onBlur={() => {
+                if (vibe === entry.vibe) return
+                const previous = entry.vibe
+                void persist({ vibe }, () => setVibe(previous))
+              }}
               placeholder="vibe formula"
               className="w-full bg-transparent text-[12px] text-ink-soft outline-none"
             />
             <textarea
               value={description}
               onChange={(event) => setDescription(event.target.value)}
-              onBlur={() => persist({ description })}
+              onBlur={() => {
+                if (description === entry.description) return
+                const previous = entry.description
+                void persist({ description }, () => setDescription(previous))
+              }}
               placeholder="One sentence about the construction."
               rows={2}
               className="w-full resize-none bg-transparent text-[15px] leading-relaxed text-ink outline-none"
@@ -122,9 +143,10 @@ export function DetailModal({
                 key={tag}
                 type="button"
                 onClick={() => {
-                  const updated = tags.filter((item) => item !== tag)
+                  const previous = tags
+                  const updated = previous.filter((item) => item !== tag)
                   setTags(updated)
-                  void persist({ tags: updated })
+                  void persist({ tags: updated }, () => setTags(previous))
                 }}
                 className="rounded-full bg-chip px-3 py-1 text-[11px] text-ink-soft"
               >
@@ -151,8 +173,10 @@ export function DetailModal({
             <select
               value={family}
               onChange={(event) => {
-                setFamily(event.target.value)
-                void persist({ family: event.target.value })
+                const previous = family
+                const next = event.target.value
+                setFamily(next)
+                void persist({ family: next }, () => setFamily(previous))
               }}
               className="mt-1 block w-full border border-rule bg-paper px-3 py-2 font-serif text-[15px] text-ink"
             >
@@ -172,7 +196,11 @@ export function DetailModal({
             <textarea
               value={uiNotes}
               onChange={(event) => setUiNotes(event.target.value)}
-              onBlur={() => persist({ uiNotes })}
+              onBlur={() => {
+                if (uiNotes === entry.uiNotes) return
+                const previous = entry.uiNotes
+                void persist({ uiNotes }, () => setUiNotes(previous))
+              }}
               placeholder="Navigation, type, buttons, and layout. Kept out of the image recipe."
               rows={4}
               className="mt-1 w-full resize-y border border-rule bg-paper px-3 py-2 text-[13px] leading-relaxed text-ink outline-none"
@@ -186,7 +214,11 @@ export function DetailModal({
             <textarea
               value={recipe}
               onChange={(event) => setRecipe(event.target.value)}
-              onBlur={() => persist({ recipe })}
+              onBlur={() => {
+                if (recipe === entry.recipe) return
+                const previous = entry.recipe
+                void persist({ recipe }, () => setRecipe(previous))
+              }}
               rows={6}
               className="w-full resize-y bg-transparent font-mono text-[13px] leading-relaxed text-ink outline-none"
             />
@@ -196,6 +228,20 @@ export function DetailModal({
             <p className="text-[12px] text-ink-soft">
               Unclassified. Run /classify to file this plate.
             </p>
+          ) : null}
+
+          {passcodeRequired ? (
+            <label className="block text-[12px] text-ink-soft">
+              Passcode
+              <input
+                type="password"
+                value={passcode}
+                onChange={(event) => onPasscode(event.target.value)}
+                placeholder="Passcode"
+                autoComplete="off"
+                className="mt-1 block border border-rule bg-paper px-3 py-2 text-[12px] text-ink outline-none"
+              />
+            </label>
           ) : null}
 
           <div className="flex flex-wrap gap-2">
@@ -224,17 +270,43 @@ export function DetailModal({
               {copied === "prompt" ? "Copied prompt" : "Copy image prompt"}
             </button>
             {confirmDelete ? (
-              <button
-                type="button"
-                onClick={() => onDelete(entry.id)}
-                className="border border-accent px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-accent"
-              >
-                Confirm delete
-              </button>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[12px] text-ink">Delete {displayTitle}?</span>
+                <button
+                  type="button"
+                  disabled={deleting}
+                  onClick={() => {
+                    setDeleting(true)
+                    setDeleteError(null)
+                    void onDelete(entry.id).then((error) => {
+                      if (!error) return
+                      setDeleting(false)
+                      setDeleteError(error)
+                    })
+                  }}
+                  className="border border-accent px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-accent disabled:opacity-50"
+                >
+                  {deleting ? "Deleting" : "Yes"}
+                </button>
+                <button
+                  type="button"
+                  disabled={deleting}
+                  onClick={() => {
+                    setConfirmDelete(false)
+                    setDeleteError(null)
+                  }}
+                  className="border border-rule px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-ink"
+                >
+                  Cancel
+                </button>
+              </div>
             ) : (
               <button
                 type="button"
-                onClick={() => setConfirmDelete(true)}
+                onClick={() => {
+                  setDeleteError(null)
+                  setConfirmDelete(true)
+                }}
                 className="border border-rule px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-ink"
               >
                 Delete
@@ -248,6 +320,8 @@ export function DetailModal({
               Close
             </button>
           </div>
+          {editError ? <p className="text-[12px] text-accent">{editError}</p> : null}
+          {deleteError ? <p className="text-[12px] text-accent">{deleteError}</p> : null}
         </div>
       </div>
     </div>

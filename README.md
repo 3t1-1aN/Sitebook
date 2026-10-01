@@ -48,4 +48,12 @@ For plates saved on the deployed site:
 
 Filesystem plates are filed by editing `data/catalog.json`. Blob plates stay in Blob.
 
+### Delete
+
+Open a plate and choose Delete, then Yes. The request sends the same passcode already typed on the page. Edits to the name, blend, notes, tags, family, and recipe send that passcode too. A missing or wrong passcode leaves the saved plate unchanged and the form snaps back.
+
+A plate uploaded on the live site is removed from the private Blob store, image included. A seed plate stays in the repo. Its id is written to a private blob, `meta/hidden.json`, and the catalog skips hidden ids, so the card disappears with no redeploy. That file is read with the Blob cache turned off.
+
+Without a Blob token, Delete removes the row from `data/catalog.json` and the image file on disk. A wrong passcode returns 401 `Wrong passcode.` If Blob is on and `SITEBOOK_PASSCODE` is missing, the response is 401 `Upload is off until SITEBOOK_PASSCODE is set.`
+
 See `AGENTS.md` for agent rules.

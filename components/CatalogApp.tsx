@@ -35,8 +35,20 @@ export function CatalogApp() {
   }, [])
 
   useEffect(() => {
-    void refresh()
-  }, [refresh])
+    let cancelled = false
+    loadCatalog()
+      .then((next) => {
+        if (cancelled) return
+        setPasscodeRequired(Boolean(next.passcodeRequired))
+        setCatalog({ families: next.families, entries: next.entries })
+      })
+      .catch(() => {
+        if (!cancelled) setNotice("Could not load catalog")
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   const hasPending = catalog?.entries.some((entry) => entry.status === "pending") ?? false
 
@@ -90,14 +102,17 @@ export function CatalogApp() {
     }
   }
 
-  async function onChange(id: string, patch: Partial<Entry>) {
+  async function onChange(id: string, patch: Partial<Entry>): Promise<string | null> {
+    if (passcodeRequired && !passcode.trim()) return "Enter the passcode."
     const response = await fetch(`/api/entries/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(patch),
+      cache: "no-store",
+      body: JSON.stringify({ ...patch, passcode }),
     })
-    if (!response.ok) return
-    const updated = (await response.json()) as Entry
+    const payload = (await response.json().catch(() => null)) as (Entry & { error?: string }) | null
+    if (!response.ok) return payload?.error || "Could not save"
+    const updated = payload as Entry
     setCatalog((current) =>
       current
         ? {
@@ -108,17 +123,26 @@ export function CatalogApp() {
           }
         : current,
     )
+    return null
   }
 
-  async function onDelete(id: string) {
-    const response = await fetch(`/api/entries/${id}`, { method: "DELETE" })
-    if (!response.ok) return
+  async function onDelete(id: string): Promise<string | null> {
+    if (passcodeRequired && !passcode.trim()) return "Enter the passcode."
+    const response = await fetch(`/api/entries/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-store",
+      body: JSON.stringify({ passcode }),
+    })
+    const payload = (await response.json().catch(() => null)) as { error?: string } | null
+    if (!response.ok) return payload?.error || "Could not delete"
     setOpenId(null)
     setCatalog((current) =>
       current
         ? { ...current, entries: current.entries.filter((entry) => entry.id !== id) }
         : current,
     )
+    return null
   }
 
   if (!catalog) {
@@ -187,8 +211,12 @@ export function CatalogApp() {
 
       {openEntry ? (
         <DetailModal
+          key={openEntry.id}
           entry={openEntry}
           families={catalog.families}
+          passcodeRequired={passcodeRequired}
+          passcode={passcode}
+          onPasscode={setPasscode}
           onClose={() => setOpenId(null)}
           onChange={onChange}
           onDelete={onDelete}

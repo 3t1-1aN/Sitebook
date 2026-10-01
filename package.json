@@ -7,6 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check:delete": "node --experimental-strip-types --test scripts/check-delete.mts",
+    "check:image": "node --experimental-strip-types --test scripts/check-image-path.mts",
+    "check:patch": "node --experimental-strip-types --test scripts/check-patch-auth.mts",
     "classify:pending": "node scripts/classify-pending.mjs"
   },
   "dependencies": {

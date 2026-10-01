@@ -1,0 +1,10 @@
+import { NextResponse } from "next/server"
+
+import { readCatalog } from "@/lib/catalog"
+
+export const runtime = "nodejs"
+
+export async function GET() {
+  const catalog = await readCatalog()
+  return NextResponse.json(catalog)
+}

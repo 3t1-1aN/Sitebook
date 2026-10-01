@@ -1,0 +1,434 @@
+{
+  "families": [
+    "Print-Tech Paper",
+    "Brutalist Editorial",
+    "Warm Editorial",
+    "Voxel Diorama",
+    "Dark Monolith",
+    "Waitlist Launch",
+    "Product UI",
+    "Unfiled"
+  ],
+  "entries": [
+    {
+      "id": "9e1ad31f-16a4-408a-b8be-f927021cdcf6",
+      "filename": "user/9e1ad31f-16a4-408a-b8be-f927021cdcf6-Screenshot-From-2026-08-03-17-42-13.png",
+      "checksum": "64b9b5907a21ce46d9090e171f35e6a6014e7af4bd4c0cde8091745237261a32",
+      "title": "Playing",
+      "vibe": "dark luxury x rose-gold product",
+      "description": "A black storefront with a single rose-gold headphone hero and three color variants below.",
+      "family": "Product UI",
+      "tags": [
+        "pitch-black ground",
+        "rose-gold product hero",
+        "reflective floor",
+        "white sans headline",
+        "dusty-rose CTA",
+        "Spanish store chrome"
+      ],
+      "recipe": "[SUBJECT: rose-gold wireless over-ear headphones on a black reflective floor] dark luxury ecommerce hero, pitch-black ground, large white sans headline left, dusty-rose rectangular CTA, three small color-variant tiles below, no clutter, studio product light.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:21:35.407Z"
+    },
+    {
+      "id": "8ba5207a-9079-4846-a9cf-6fffd778a713",
+      "filename": "user/8ba5207a-9079-4846-a9cf-6fffd778a713-Screenshot-From-2026-08-03-17-46-39.png",
+      "checksum": "298775c81cc92cbed027251d25c6b9dec88f542d2304787fd437842a819dce93",
+      "title": "Haven",
+      "vibe": "nature hero x pill chrome",
+      "description": "A mountain-meadow photograph carries a floating pill nav and a short AI-product headline.",
+      "family": "Warm Editorial",
+      "tags": [
+        "full-bleed landscape",
+        "pill nav bar",
+        "wildflower foreground",
+        "cabin meadow",
+        "dark sans on photo",
+        "orange mark"
+      ],
+      "recipe": "[SUBJECT: a mountain valley with wildflowers and a small wooden cabin] full-bleed nature hero, floating white pill navigation, short dark sans headline centered, white rounded Get Started button, soft morning light, orange hexagonal mark.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:21:41.280Z"
+    },
+    {
+      "id": "11fea6dd-c182-4698-8fca-6a55d791c024",
+      "filename": "user/11fea6dd-c182-4698-8fca-6a55d791c024-Screenshot-From-2026-08-03-17-47-07.png",
+      "checksum": "bd5dfcb8c640558d48b0fed38024e756067b8ec96ef351d33298056016be32bd",
+      "title": "EOSAI",
+      "vibe": "cinematic surreal x agency",
+      "description": "A lone figure walks a water path toward a sky-filled arch under a ringed planet.",
+      "family": "Dark Monolith",
+      "tags": [
+        "surreal dusk sky",
+        "ringed planet",
+        "reflective water path",
+        "gold gradient word",
+        "thin white nav",
+        "circular arrow CTA"
+      ],
+      "recipe": "[SUBJECT: a lone coated figure walking a narrow path across still water toward a monumental rectangular arch revealing bright sky, a ringed planet behind] cinematic agency hero, dusky blue-to-sunset sky, thin white sans nav, gold-gradient on one headline word, circular arrow CTA, vast empty water.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:21:42.920Z"
+    },
+    {
+      "id": "1191bbae-33ee-48a0-ae21-dbe93582f4c7",
+      "filename": "user/1191bbae-33ee-48a0-ae21-dbe93582f4c7-Screenshot-From-2026-08-03-17-38-03.png",
+      "checksum": "b7c58ec7279ac8daa49cff05d7fee1b8544fb79a951dc6b08e7f23768cc93f29",
+      "title": "Classic",
+      "vibe": "warm glass x product cards",
+      "description": "A tan baseball cap sits on a sunlit field under frosted nav and three glass product tiles.",
+      "family": "Product UI",
+      "tags": [
+        "warm tan field",
+        "glassmorphism nav",
+        "embroidered cap hero",
+        "floating price chip",
+        "frosted product cards",
+        "rounded CTAs"
+      ],
+      "recipe": "[SUBJECT: a tan baseball cap embroidered CLASSIC EST 2024 on a sunlit textured field] warm product landing, translucent pill nav, large white sans headline, tan rounded Shop button, three frosted glass product cards below, diagonal sunlight.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:21:46.392Z"
+    },
+    {
+      "id": "f80129d0-9aae-4105-949e-097a056f7ba3",
+      "filename": "user/f80129d0-9aae-4105-949e-097a056f7ba3-Screenshot-From-2026-08-03-17-39-15.png",
+      "checksum": "d67d24356f604e3cdfa81e9dc10d08539b8161e42d0efbe2a0924ef2c85ad776",
+      "title": "Orbyte",
+      "vibe": "dark tech x gold particle",
+      "description": "A gold particle sphere hangs over a plus-grid void with heavy futurist type.",
+      "family": "Dark Monolith",
+      "tags": [
+        "near-black void",
+        "gold particle sphere",
+        "plus-sign grid",
+        "block display type",
+        "fade-out headline",
+        "logo-wall footer"
+      ],
+      "recipe": "[SUBJECT: a sphere of golden particles glowing against a black plus-sign grid] dark AI SaaS hero, heavy block display type left, small bracketed version labels, thin outlined CTAs, monochrome logo row at the foot, orange-gold only as light.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:21:57.286Z"
+    },
+    {
+      "id": "66cebc29-bda7-444c-8f42-787c50669e1e",
+      "filename": "user/66cebc29-bda7-444c-8f42-787c50669e1e-Screenshot-From-2026-08-03-17-39-44.png",
+      "checksum": "7c9405db6fd5edea2708d547d40c105b3c4e5783bbe398cc63677daf4becdf79",
+      "title": "Zenox",
+      "vibe": "dark product x glass cards",
+      "description": "Black-and-red headphones sit over giant ghost type with floating glass spec cards.",
+      "family": "Product UI",
+      "tags": [
+        "black-red headphones",
+        "ghost wordmark",
+        "glass info cards",
+        "red accent bar",
+        "white pill preorder",
+        "deep black ground"
+      ],
+      "recipe": "[SUBJECT: black over-ear headphones with red accents at a dynamic angle] dark product hero, giant translucent brand word behind the object, frosted glass spec cards, one white pill Pre-Order button, deep black ground, red as the only accent.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:22:04.012Z"
+    },
+    {
+      "id": "63e42b93-39cf-491d-ab4b-3a92b601cd77",
+      "filename": "user/63e42b93-39cf-491d-ab4b-3a92b601cd77-Screenshot-From-2026-08-03-17-50-30.png",
+      "checksum": "625afca7366df3cf872c31a08766486e54dbf0c23db9e8b16fe2880387f2cef3",
+      "title": "Saffron",
+      "vibe": "greyscale mountain x thin nav",
+      "description": "Snow peaks rise from fog under a light bar of all-caps links and a heavy SAFFRON mark.",
+      "family": "Brutalist Editorial",
+      "tags": [
+        "greyscale mountains",
+        "fog base",
+        "snow peaks",
+        "light grey header bar",
+        "heavy black wordmark",
+        "all-caps links"
+      ],
+      "recipe": "[SUBJECT: jagged snow-capped peaks rising from a thick fog bank] greyscale editorial header, light grey nav bar, heavy black sans wordmark left, all-caps links right, no buttons, photograph is the page.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:22:18.225Z"
+    },
+    {
+      "id": "4971e180-5e2f-40d5-a40b-798dcc27c699",
+      "filename": "user/4971e180-5e2f-40d5-a40b-798dcc27c699-Screenshot-From-2026-08-03-18-13-37.png",
+      "checksum": "cf4fb99df9cb394d9a559af051e5b4164868b4eb1f4c41e177ce4f85d6f267b3",
+      "title": "LeanTrack",
+      "vibe": "split mono x story page",
+      "description": "A white-and-black split page with a giant 01, vertical sidebar type, and a photo overlapping the seam.",
+      "family": "Brutalist Editorial",
+      "tags": [
+        "white-black split",
+        "giant 01",
+        "vertical sidebar type",
+        "overlapping photo",
+        "hamburger on black",
+        "pixel ornaments"
+      ],
+      "recipe": "[SUBJECT: a warm indoor desk with screens in front of a Christmas tree] split-field story page, left white with bold The Story and faint 01, right solid black with vertical dots, photograph overlaps the seam, pixel-square ornaments, no color in the chrome.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:22:22.311Z"
+    },
+    {
+      "id": "0f8ff97e-9c72-458f-ad35-465c1e693f56",
+      "filename": "user/0f8ff97e-9c72-458f-ad35-465c1e693f56-Screenshot-From-2026-08-03-17-49-58.png",
+      "checksum": "f68adb027ca01bd3c2b164e40afd4165124861eb614db4cb6ec4dd9ceb5af79c",
+      "title": "Apreatif",
+      "vibe": "twilight mountain x display type",
+      "description": "Snow peaks at dusk carry a two-weight headline, the bold Mountains sitting on the ridgeline.",
+      "family": "Warm Editorial",
+      "tags": [
+        "dusk mountain photo",
+        "teal-to-gold sky",
+        "layered display type",
+        "lowercase wordmark",
+        "vertical social rail",
+        "scroll cue"
+      ],
+      "recipe": "[SUBJECT: snow-capped peaks at twilight with a teal-to-gold horizon] photography landing, lowercase white wordmark, two-weight centered headline with the bold word sitting on the ridge, small SEE WHOLE SERIES link, vertical social names, three-dot carousel.",
+      "status": "ready",
+      "createdAt": "2026-08-23T00:22:25.193Z"
+    },
+    {
+      "id": "6f01b301-0851-4579-a19c-e04f9d5b749b",
+      "filename": "user/6f01b301-0851-4579-a19c-e04f9d5b749b-c6a2198ac2f1ba51fbcee8b56960648b.jpg",
+      "checksum": "91811f2274d67e6c9cf065ab2e7dcaa6288fb0a675352a67b74023377f74d935",
+      "title": "Lampz",
+      "vibe": "charcoal product x safety orange",
+      "description": "A matte black desk lamp sits on a charcoal void under cream outline type and one orange mark.",
+      "family": "Product UI",
+      "tags": [
+        "charcoal void ground",
+        "matte black lamp",
+        "cream geometric headline",
+        "outlined DARK",
+        "safety-orange accent",
+        "rotated edge socials"
+      ],
+      "recipe": "[SUBJECT: a matte black articulated desk lamp with an orange cord loop] charcoal void ground, cream geometric sans LUMIER over outlined DARK, tiny orange CTA, vertical -03, rotated socials, dramatic studio rim light.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:12:50.624Z"
+    },
+    {
+      "id": "929b82b0-424e-470d-b919-0476d4547891",
+      "filename": "user/929b82b0-424e-470d-b919-0476d4547891-blackandwhite.jpg",
+      "checksum": "99f4ba054f0938602e163a9002926a0a03a254a7dce4302ce23a7f067a5cca8d",
+      "title": "Blend",
+      "vibe": "mono coffee x print catalog",
+      "description": "A black-and-white coffee brand page stacks serif questions against studio cups and bag stills.",
+      "family": "Brutalist Editorial",
+      "tags": [
+        "strict black and white",
+        "large serif questions",
+        "studio cup stills",
+        "black product squares",
+        "Z-pattern story blocks",
+        "black Join button"
+      ],
+      "recipe": "[SUBJECT: stacked white coffee cups and gray coffee bags on stark black or white grounds] high-contrast monochrome catalog, oversized serif headlines, small sans metadata, three black product tiles, alternating text-and-still story, black Join field.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:12:56.995Z"
+    },
+    {
+      "id": "80e07068-7154-4b55-9f3e-114cb5c277d2",
+      "filename": "user/80e07068-7154-4b55-9f3e-114cb5c277d2-20926da058f377c1c8c92797b9b3b2ce.jpg",
+      "checksum": "9e203a7dcf94081d1f10fc9081ba207e344f7933c7b9760e7b058e162f0d92f6",
+      "title": "HIDE",
+      "vibe": "split PDP x leather studio",
+      "description": "A black leather backpack fills the left pane of a white product page with serif title and pill CTA.",
+      "family": "Product UI",
+      "tags": [
+        "split image and copy",
+        "light gray studio ground",
+        "black leather backpack",
+        "elegant serif title",
+        "circular color swatches",
+        "black pill ADD TO BAG"
+      ],
+      "recipe": "[SUBJECT: a black leather zip backpack on a light gray studio sweep] split PDP, 02/04 gallery chrome, white copy column, serif product title, bold price, four color dots, black pill ADD TO BAG, sparse HIDE nav.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:13:20.072Z"
+    },
+    {
+      "id": "0fa34107-e058-4e08-b796-76bd949580e8",
+      "filename": "user/0fa34107-e058-4e08-b796-76bd949580e8-Botanical-call-to-action.jpg",
+      "checksum": "730dcd72266e7609e8615d4d6d62271de3e8fecee8b405cf6f6bc9f3a3f41bc3",
+      "title": "Botanicals",
+      "vibe": "white air x rubber plant",
+      "description": "A single rubber-plant stem floats on white under a black sans headline and a quiet shop link.",
+      "family": "Warm Editorial",
+      "tags": [
+        "stark white ground",
+        "rubber plant stem",
+        "bold black sans headline",
+        "text-link CTA",
+        "circular play mark",
+        "vertical 01/04"
+      ],
+      "recipe": "[SUBJECT: a green rubber-plant stem with glossy leaves isolated on white] airy plant hero, black sans Clean air in your home, To the webshop text link, circular play control, tiny two-column notes, 01/04 edge index, soft gray shadow.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:13:26.810Z"
+    },
+    {
+      "id": "fa0cb730-63b3-4270-aa1e-97df5c707a63",
+      "filename": "user/fa0cb730-63b3-4270-aa1e-97df5c707a63-70b23bd8818817cda8a50628a453f20b.jpg",
+      "checksum": "2526b2fcc4ec5467aef5080ec50864eaa868a101327016f8756c8d379b58c298",
+      "title": "Elastos",
+      "vibe": "charcoal wallet x copper card",
+      "description": "A dark crypto wallet centers a copper Send card over a balance, QR receive pane, and transaction list.",
+      "family": "Product UI",
+      "tags": [
+        "charcoal wave ground",
+        "copper Send card",
+        "large USD balance",
+        "rounded app chrome",
+        "QR receive pane",
+        "transaction table"
+      ],
+      "recipe": "[SUBJECT: a floating copper Send card with currency toggles on a charcoal dashboard] dark fintech wallet, organic gray waves, huge 8590 balance, rounded corners, QR receive column, ledger verify, bottom transaction rows, soft card shadow.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:04.169Z"
+    },
+    {
+      "id": "e4845cb2-502d-4ab3-9237-2f45345a7fab",
+      "filename": "user/e4845cb2-502d-4ab3-9237-2f45345a7fab-88f7eedeed621aed23604712a54825aa.jpg",
+      "checksum": "969f1d17bf3e4543025783ea59e33a2b6433ee45070625b5f0827d6dd4c42805",
+      "title": "Harmoniq",
+      "vibe": "serif SaaS x painted forest",
+      "description": "A serif AI headline sits over a lush painted forest with a pill demo button and an arch of app icons.",
+      "family": "Warm Editorial",
+      "tags": [
+        "painted evergreen hills",
+        "soft sky-blue fade",
+        "elegant serif headline",
+        "dark pill Book a demo",
+        "arch of app tiles",
+        "raised-20M badge"
+      ],
+      "recipe": "[SUBJECT: a lush painted evergreen valley with rolling hills, soft clouds, and small birds] serene SaaS hero, sky fading into forest, large serif Your Haven for Seamless AI Solutions, dark pill Book a demo, arc of white app tiles, raised-round badge.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:07.045Z"
+    },
+    {
+      "id": "9763eb4e-7eba-4cf0-b931-9e5eefca1346",
+      "filename": "user/9763eb4e-7eba-4cf0-b931-9e5eefca1346-496ae288c6159c17c798c316c024bf20.jpg",
+      "checksum": "a82364a11b53372883c8c1e6f93c4fdae8a4cd9959954978d9306836d7e3baad",
+      "title": "DSR",
+      "vibe": "gray studio x condensed type",
+      "description": "Matte black over-ears float on light gray with giant faint DSR letters and a pill price button.",
+      "family": "Product UI",
+      "tags": [
+        "light gray studio",
+        "matte black headphones",
+        "giant faint DSR",
+        "condensed black title",
+        "left angle thumbs",
+        "pill price cart"
+      ],
+      "recipe": "[SUBJECT: matte black over-ear headphones floating in a light gray studio] giant faint DSR behind the product, condensed black ATH-DSR7BT, 2.0m and 45mm specs, three circular angle thumbs, pill $299 add to cart, rounded window frame.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:09.918Z"
+    },
+    {
+      "id": "21741ad0-9c75-4bd4-9e8b-b5293e0f59a0",
+      "filename": "user/21741ad0-9c75-4bd4-9e8b-b5293e0f59a0-797e64303ef556e650043f6cb23b41fd.jpg",
+      "checksum": "744944ac504cc6984a05dc1d065d356d9ca5e68a36c6fc3e57701fd1ca3997d4",
+      "title": "Cowboy",
+      "vibe": "black-on-black x sale type",
+      "description": "A matte black e-bike almost vanishes into charcoal under a centered Back to Black headline.",
+      "family": "Dark Monolith",
+      "tags": [
+        "pitch charcoal ground",
+        "matte black e-bike",
+        "white sans Back to Black",
+        "Black Friday label",
+        "white rounded SHOP NOW",
+        "sparse COWBOY nav"
+      ],
+      "recipe": "[SUBJECT: a cropped matte black electric bicycle defined only by rim light] near-black ground, centered white sans Back to Black, small Black Friday Only label, white rounded SHOP NOW, COWBOY. wordmark, quiet top nav.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:11.515Z"
+    },
+    {
+      "id": "8863a05a-e782-4908-b8e5-fcbaae0ac7ae",
+      "filename": "user/8863a05a-e782-4908-b8e5-fcbaae0ac7ae-6343f48c5213722be7544949b7ea86b4.jpg",
+      "checksum": "57d732bc1f748a17ef01d43d3a52f1c1a2039ff24f3589d7f74ce9341145cecd",
+      "title": "Stats",
+      "vibe": "charcoal dash x white ink",
+      "description": "A dark admin shell stacks a white bar chart, three sparklines, and thin location progress bars.",
+      "family": "Product UI",
+      "tags": [
+        "deep charcoal panels",
+        "thin white line icons",
+        "sidebar DASHBOARD",
+        "white bar chart",
+        "sparkline stat tiles",
+        "location progress bars"
+      ],
+      "recipe": "[SUBJECT: a dark charcoal analytics dashboard with white hairline charts] left icon sidebar, Welcome Ali greeting, total issues 451, white vertical bars, three sparkline tiles, small-caps port names on thin progress bars, monochrome only.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:15.089Z"
+    },
+    {
+      "id": "c21af11d-a827-42eb-8ffb-9915494181cd",
+      "filename": "user/c21af11d-a827-42eb-8ffb-9915494181cd-c9a441f97631454565f34a75ce6ce8be.jpg",
+      "checksum": "8cfb8022fd1cd5114275dcb01e28462850b7319b2930ca3672686b6bcea904dc",
+      "title": "Forest",
+      "vibe": "fog pines x glass pill",
+      "description": "A frosted vertical weather pill sits on a fogged pine forest with a circular tree-top window.",
+      "family": "Warm Editorial",
+      "tags": [
+        "fogged pine forest",
+        "frosted glass pill",
+        "circular cutout window",
+        "Forest title",
+        "16°C humidity chips",
+        "moon and wind icons"
+      ],
+      "recipe": "[SUBJECT: a fogged coniferous forest photographed at dusk] tall frosted-glass weather pill, circular clear window of treetops, white sans Forest, 30 July, chips for 16°C 85% 4m/s, dim green-black mist light.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:27.432Z"
+    },
+    {
+      "id": "940cc658-5b47-4d68-9980-78f599726dcc",
+      "filename": "user/940cc658-5b47-4d68-9980-78f599726dcc-9a367cc4207ce4aa1e49a5474a85719f.jpg",
+      "checksum": "6e761a9a6b3a0eeca3a587d4b282cac863789802815a34ff515116364475704f",
+      "title": "Rennale",
+      "vibe": "forest green x earth cards",
+      "description": "Real leaves overlay a forest-green mobile page above a four-icon bar and an earth-tone card grid.",
+      "family": "Warm Editorial",
+      "tags": [
+        "forest green ground",
+        "macro green and dried leaves",
+        "cream sans wordmark",
+        "beige pill CTA",
+        "line-art icon bar",
+        "sage brown cream tiles"
+      ],
+      "recipe": "[SUBJECT: glossy green leaves and one dried brown leaf laid on a forest-green page] cream sans Rennale Renuelly, beige pill CTA, dark-green four-icon service bar, 3x2 rounded earth-tone cards, one canopy sunburst photo, soft card shadow.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:23:39.389Z"
+    },
+    {
+      "id": "56e8ea9d-dc75-4309-b81a-ddc94a97e82b",
+      "filename": "user/56e8ea9d-dc75-4309-b81a-ddc94a97e82b-585643bd580c4789c301b4e90e3bea09.jpg",
+      "checksum": "ec71b851617be68c33755dc044c67074c87877c9650e5b78f7679f793d96b3d4",
+      "title": "Escape",
+      "vibe": "mist valley x inner-peace type",
+      "description": "A golden-hour mountain valley carries a centered Inner Peace headline, search pill, and press logos.",
+      "family": "Warm Editorial",
+      "tags": [
+        "misty mountain valley",
+        "golden-hour path",
+        "italic Inner Peace",
+        "pill search bar",
+        "Get early access",
+        "Forbes press row"
+      ],
+      "recipe": "[SUBJECT: rolling green mountains and a dirt path through a misty valley at golden hour] full-bleed nature hero, Escape wordmark, mixed sans and italic serif Inner Peace, rounded Search Now pill, black Get early access, monochrome press logos.",
+      "status": "ready",
+      "createdAt": "2026-08-24T18:24:34.145Z"
+    }
+  ]
+}

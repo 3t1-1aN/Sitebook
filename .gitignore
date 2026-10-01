@@ -33,9 +33,30 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# user-dropped library images
+# user-dropped library images stay ignored; the seed plates are exceptions
 /data/images/user/*
 !/data/images/user/.gitkeep
+!/data/images/user/0f8ff97e-9c72-458f-ad35-465c1e693f56-Screenshot-From-2026-08-03-17-49-58.png
+!/data/images/user/0fa34107-e058-4e08-b796-76bd949580e8-Botanical-call-to-action.jpg
+!/data/images/user/1191bbae-33ee-48a0-ae21-dbe93582f4c7-Screenshot-From-2026-08-03-17-38-03.png
+!/data/images/user/11fea6dd-c182-4698-8fca-6a55d791c024-Screenshot-From-2026-08-03-17-47-07.png
+!/data/images/user/21741ad0-9c75-4bd4-9e8b-b5293e0f59a0-797e64303ef556e650043f6cb23b41fd.jpg
+!/data/images/user/4971e180-5e2f-40d5-a40b-798dcc27c699-Screenshot-From-2026-08-03-18-13-37.png
+!/data/images/user/56e8ea9d-dc75-4309-b81a-ddc94a97e82b-585643bd580c4789c301b4e90e3bea09.jpg
+!/data/images/user/63e42b93-39cf-491d-ab4b-3a92b601cd77-Screenshot-From-2026-08-03-17-50-30.png
+!/data/images/user/66cebc29-bda7-444c-8f42-787c50669e1e-Screenshot-From-2026-08-03-17-39-44.png
+!/data/images/user/6f01b301-0851-4579-a19c-e04f9d5b749b-c6a2198ac2f1ba51fbcee8b56960648b.jpg
+!/data/images/user/80e07068-7154-4b55-9f3e-114cb5c277d2-20926da058f377c1c8c92797b9b3b2ce.jpg
+!/data/images/user/8863a05a-e782-4908-b8e5-fcbaae0ac7ae-6343f48c5213722be7544949b7ea86b4.jpg
+!/data/images/user/8ba5207a-9079-4846-a9cf-6fffd778a713-Screenshot-From-2026-08-03-17-46-39.png
+!/data/images/user/929b82b0-424e-470d-b919-0476d4547891-blackandwhite.jpg
+!/data/images/user/940cc658-5b47-4d68-9980-78f599726dcc-9a367cc4207ce4aa1e49a5474a85719f.jpg
+!/data/images/user/9763eb4e-7eba-4cf0-b931-9e5eefca1346-496ae288c6159c17c798c316c024bf20.jpg
+!/data/images/user/9e1ad31f-16a4-408a-b8be-f927021cdcf6-Screenshot-From-2026-08-03-17-42-13.png
+!/data/images/user/c21af11d-a827-42eb-8ffb-9915494181cd-c9a441f97631454565f34a75ce6ce8be.jpg
+!/data/images/user/e4845cb2-502d-4ab3-9237-2f45345a7fab-88f7eedeed621aed23604712a54825aa.jpg
+!/data/images/user/f80129d0-9aae-4105-949e-097a056f7ba3-Screenshot-From-2026-08-03-17-39-15.png
+!/data/images/user/fa0cb730-63b3-4270-aa1e-97df5c707a63-70b23bd8818817cda8a50628a453f20b.jpg
 /data/catalog.json.tmp
 /data/.classify-cache/
 

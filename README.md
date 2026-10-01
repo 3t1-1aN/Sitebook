@@ -23,6 +23,8 @@ The deployed site does not keep new files on disk. New plates go to a private Ve
 
 Viewing the library stays open. Uploading asks for the passcode. Local dev without those env vars still saves to `data/images/user/` and `data/catalog.json`.
 
+The 21 seed screenshots are gitignore exceptions under `data/images/user/`, so they ship with the repo, and any later drop in that folder stays ignored.
+
 ## How Ethan uses it
 
 ### Upload

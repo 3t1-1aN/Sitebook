@@ -50,7 +50,7 @@ Filesystem plates are filed by editing `data/catalog.json`. Blob plates stay in 
 
 ### Delete
 
-Open a plate and choose Delete, then Yes. The request sends the same passcode already typed on the page.
+Open a plate and choose Delete, then Yes. The request sends the same passcode already typed on the page. Edits to the name, blend, notes, tags, family, and recipe send that passcode too. A missing or wrong passcode leaves the saved plate unchanged and the form snaps back.
 
 A plate uploaded on the live site is removed from the private Blob store, image included. A seed plate stays in the repo. Its id is written to a private blob, `meta/hidden.json`, and the catalog skips hidden ids, so the card disappears with no redeploy. That file is read with the Blob cache turned off.
 

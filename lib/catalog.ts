@@ -13,6 +13,7 @@ import {
   readHiddenIds,
 } from "./blob-entries"
 import { planDelete } from "./delete-plan"
+import { containedImagePath } from "./image-path"
 import type { Catalog, ClassifyResult, Entry, Family } from "./types"
 import { PATCH_FIELDS } from "./types"
 
@@ -79,15 +80,7 @@ async function writeCatalog(catalog: Catalog): Promise<void> {
 }
 
 export function resolveImagePath(filename: string): string {
-  const normalized = path.normalize(filename).replace(/^[/\\]+/, "")
-  if (normalized.includes("..")) {
-    throw new Error("Invalid image path")
-  }
-  const absolute = path.join(IMAGES_DIR, normalized)
-  if (!absolute.startsWith(IMAGES_DIR)) {
-    throw new Error("Invalid image path")
-  }
-  return absolute
+  return containedImagePath(IMAGES_DIR, filename)
 }
 
 export function isEmptyField(value: string | string[]): boolean {

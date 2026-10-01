@@ -18,7 +18,9 @@ export function entryBlobPath(id: string): string {
 }
 
 export function isBlobImagePath(pathname: string): boolean {
-  return /^blob\/[A-Za-z0-9._-]+$/.test(pathname)
+  if (!/^blob\/[A-Za-z0-9._-]+$/.test(pathname)) return false
+  const name = pathname.slice(BLOB_IMAGE_PREFIX.length)
+  return name !== "." && name !== ".."
 }
 
 export async function listBlobEntries(): Promise<Entry[]> {

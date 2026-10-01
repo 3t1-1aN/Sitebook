@@ -11,36 +11,52 @@ type PatchBody = Partial<
   Pick<Entry, "title" | "vibe" | "description" | "family" | "tags" | "recipe" | "uiNotes">
 >
 
+const noStore = { "Cache-Control": "no-store" }
+
 export async function PATCH(
   request: Request,
   context: { params: Promise<{ id: string }> },
 ) {
+  let body: Record<string, unknown> = {}
+  try {
+    const parsed = (await request.json()) as unknown
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      body = parsed as Record<string, unknown>
+    }
+  } catch {
+    body = {}
+  }
+
+  const passcodeError = checkPasscode(body.passcode)
+  if (passcodeError) {
+    return NextResponse.json({ error: passcodeError }, { status: 401, headers: noStore })
+  }
+
   const { id } = await context.params
-  const body = (await request.json()) as Record<string, unknown>
   const patch: PatchBody = {}
 
   for (const key of ["title", "vibe", "description", "family", "recipe", "uiNotes"] as const) {
     if (body[key] !== undefined) {
       if (typeof body[key] !== "string") {
-        return NextResponse.json({ error: `${key} must be a string` }, { status: 400 })
+        return NextResponse.json({ error: `${key} must be a string` }, { status: 400, headers: noStore })
       }
       patch[key] = body[key]
     }
   }
   if (body.tags !== undefined) {
     if (!Array.isArray(body.tags) || body.tags.some((tag) => typeof tag !== "string")) {
-      return NextResponse.json({ error: "tags must be a string array" }, { status: 400 })
+      return NextResponse.json({ error: "tags must be a string array" }, { status: 400, headers: noStore })
     }
     patch.tags = body.tags
   }
 
   try {
     const entry = await patchEntry(id, patch)
-    if (!entry) return NextResponse.json({ error: "Not found" }, { status: 404 })
-    return NextResponse.json(entry)
+    if (!entry) return NextResponse.json({ error: "Not found" }, { status: 404, headers: noStore })
+    return NextResponse.json(entry, { headers: noStore })
   } catch (error) {
     const message = error instanceof Error ? error.message : "Invalid patch"
-    return NextResponse.json({ error: message }, { status: 400 })
+    return NextResponse.json({ error: message }, { status: 400, headers: noStore })
   }
 }
 
@@ -58,10 +74,7 @@ export async function DELETE(
 
   const passcodeError = checkPasscode(passcode)
   if (passcodeError) {
-    return NextResponse.json(
-      { error: passcodeError },
-      { status: 401, headers: { "Cache-Control": "no-store" } },
-    )
+    return NextResponse.json({ error: passcodeError }, { status: 401, headers: noStore })
   }
 
   const { id } = await context.params

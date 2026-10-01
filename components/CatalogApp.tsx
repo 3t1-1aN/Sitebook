@@ -102,14 +102,17 @@ export function CatalogApp() {
     }
   }
 
-  async function onChange(id: string, patch: Partial<Entry>) {
+  async function onChange(id: string, patch: Partial<Entry>): Promise<string | null> {
+    if (passcodeRequired && !passcode.trim()) return "Enter the passcode."
     const response = await fetch(`/api/entries/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(patch),
+      cache: "no-store",
+      body: JSON.stringify({ ...patch, passcode }),
     })
-    if (!response.ok) return
-    const updated = (await response.json()) as Entry
+    const payload = (await response.json().catch(() => null)) as (Entry & { error?: string }) | null
+    if (!response.ok) return payload?.error || "Could not save"
+    const updated = payload as Entry
     setCatalog((current) =>
       current
         ? {
@@ -120,6 +123,7 @@ export function CatalogApp() {
           }
         : current,
     )
+    return null
   }
 
   async function onDelete(id: string): Promise<string | null> {

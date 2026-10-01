@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { copyBrief, copyImagePrompt } from "@/lib/copy"
 import type { Entry, Family } from "@/lib/types"
@@ -14,14 +14,20 @@ type EntryPatch = Partial<
 type DetailModalProps = {
   entry: Entry
   families: Family[]
+  passcodeRequired: boolean
+  passcode: string
+  onPasscode: (value: string) => void
   onClose: () => void
   onChange: (id: string, patch: EntryPatch) => Promise<void>
-  onDelete: (id: string) => Promise<void>
+  onDelete: (id: string) => Promise<string | null>
 }
 
 export function DetailModal({
   entry,
   families,
+  passcodeRequired,
+  passcode,
+  onPasscode,
   onClose,
   onChange,
   onDelete,
@@ -36,17 +42,8 @@ export function DetailModal({
   const [tagDraft, setTagDraft] = useState("")
   const [copied, setCopied] = useState<string | null>(null)
   const [confirmDelete, setConfirmDelete] = useState(false)
-
-  useEffect(() => {
-    setTitle(entry.title)
-    setVibe(entry.vibe)
-    setDescription(entry.description)
-    setFamily(entry.family)
-    setTags(entry.tags)
-    setRecipe(entry.recipe)
-    setUiNotes(entry.uiNotes)
-    setConfirmDelete(false)
-  }, [entry])
+  const [deleteError, setDeleteError] = useState<string | null>(null)
+  const [deleting, setDeleting] = useState(false)
 
   async function persist(patch: EntryPatch) {
     await onChange(entry.id, patch)
@@ -224,17 +221,53 @@ export function DetailModal({
               {copied === "prompt" ? "Copied prompt" : "Copy image prompt"}
             </button>
             {confirmDelete ? (
-              <button
-                type="button"
-                onClick={() => onDelete(entry.id)}
-                className="border border-accent px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-accent"
-              >
-                Confirm delete
-              </button>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[12px] text-ink">Delete {displayTitle}?</span>
+                {passcodeRequired ? (
+                  <input
+                    type="password"
+                    value={passcode}
+                    onChange={(event) => onPasscode(event.target.value)}
+                    placeholder="Passcode"
+                    autoComplete="off"
+                    className="border border-rule bg-paper px-3 py-2 text-[12px] text-ink outline-none"
+                  />
+                ) : null}
+                <button
+                  type="button"
+                  disabled={deleting}
+                  onClick={() => {
+                    setDeleting(true)
+                    setDeleteError(null)
+                    void onDelete(entry.id).then((error) => {
+                      if (!error) return
+                      setDeleting(false)
+                      setDeleteError(error)
+                    })
+                  }}
+                  className="border border-accent px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-accent disabled:opacity-50"
+                >
+                  {deleting ? "Deleting" : "Yes"}
+                </button>
+                <button
+                  type="button"
+                  disabled={deleting}
+                  onClick={() => {
+                    setConfirmDelete(false)
+                    setDeleteError(null)
+                  }}
+                  className="border border-rule px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-ink"
+                >
+                  Cancel
+                </button>
+              </div>
             ) : (
               <button
                 type="button"
-                onClick={() => setConfirmDelete(true)}
+                onClick={() => {
+                  setDeleteError(null)
+                  setConfirmDelete(true)
+                }}
                 className="border border-rule px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-ink"
               >
                 Delete
@@ -248,6 +281,7 @@ export function DetailModal({
               Close
             </button>
           </div>
+          {deleteError ? <p className="text-[12px] text-accent">{deleteError}</p> : null}
         </div>
       </div>
     </div>

@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check:delete": "node --experimental-strip-types --test scripts/check-delete.mts",
     "classify:pending": "node scripts/classify-pending.mjs"
   },
   "dependencies": {

@@ -4,8 +4,11 @@ import { deleteEntry, patchEntry } from "@/lib/catalog"
 import type { Entry } from "@/lib/types"
 
 export const runtime = "nodejs"
+export const dynamic = "force-dynamic"
 
-type PatchBody = Partial<Pick<Entry, "title" | "vibe" | "description" | "family" | "tags" | "recipe">>
+type PatchBody = Partial<
+  Pick<Entry, "title" | "vibe" | "description" | "family" | "tags" | "recipe" | "uiNotes">
+>
 
 export async function PATCH(
   request: Request,
@@ -15,7 +18,7 @@ export async function PATCH(
   const body = (await request.json()) as Record<string, unknown>
   const patch: PatchBody = {}
 
-  for (const key of ["title", "vibe", "description", "family", "recipe"] as const) {
+  for (const key of ["title", "vibe", "description", "family", "recipe", "uiNotes"] as const) {
     if (body[key] !== undefined) {
       if (typeof body[key] !== "string") {
         return NextResponse.json({ error: `${key} must be a string` }, { status: 400 })

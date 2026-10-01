@@ -11,8 +11,9 @@ type StyleCardProps = {
 }
 
 export function StyleCard({ entry, n, total, onOpen }: StyleCardProps) {
-  const title = entry.title || "Untitled"
-  const family = entry.family || "Unfiled"
+  const unclassified = entry.status === "pending" && !entry.title
+  const title = unclassified ? "Unclassified" : entry.title || "Untitled"
+  const family = entry.family
   const visible = entry.tags.slice(0, 3)
   const extra = entry.tags.length - visible.length
 
@@ -35,7 +36,9 @@ export function StyleCard({ entry, n, total, onOpen }: StyleCardProps) {
           <h2 className="font-serif text-[2rem] leading-[1.05] tracking-tight text-ink">
             {title}
           </h2>
-          <p className="shrink-0 text-[11px] text-ink-soft">{entry.vibe}</p>
+          {entry.vibe ? (
+            <p className="shrink-0 text-[11px] text-ink-soft">{entry.vibe}</p>
+          ) : null}
         </div>
         <div className="flex flex-wrap items-center gap-1.5">
           {visible.map((tag) => (
@@ -50,16 +53,17 @@ export function StyleCard({ entry, n, total, onOpen }: StyleCardProps) {
             <span className="text-[10px] text-ink-soft">+{extra}</span>
           ) : null}
         </div>
-        {entry.status === "pending" ? (
-          <p className="text-[11px] text-ink-soft">Waiting for plate notes</p>
-        ) : null}
         <div className="mt-auto flex items-end justify-between pt-2">
-          <p className="font-serif text-[13px] uppercase tracking-[0.04em] text-accent">
-            <span aria-hidden className="mr-1.5 inline-block text-[9px] leading-none">
-              ◆
-            </span>
-            {family}
-          </p>
+          {family ? (
+            <p className="font-serif text-[13px] uppercase tracking-[0.04em] text-accent">
+              <span aria-hidden className="mr-1.5 inline-block text-[9px] leading-none">
+                ◆
+              </span>
+              {family}
+            </p>
+          ) : (
+            <span />
+          )}
           <p className="text-[11px] tabular-nums text-ink-soft">
             {formatAccession(n, total)}
           </p>

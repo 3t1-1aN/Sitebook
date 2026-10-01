@@ -2,7 +2,15 @@ import { createHash } from "node:crypto"
 import { mkdir, readFile, rename, unlink, writeFile } from "node:fs/promises"
 import path from "node:path"
 
-import type { Catalog, ClassifyResult, Entry } from "./types"
+import {
+  blobEnabled,
+  deleteBlobPlate,
+  listBlobEntries,
+  putBlobEntry,
+  putBlobImage,
+  readBlobEntry,
+} from "./blob-entries"
+import type { Catalog, ClassifyResult, Entry, Family } from "./types"
 import { PATCH_FIELDS } from "./types"
 
 const DATA_DIR = path.join(process.cwd(), "data")
@@ -24,9 +32,27 @@ export function sha256(bytes: Buffer): string {
   return createHash("sha256").update(bytes).digest("hex")
 }
 
+export function familyNames(families: Family[]): string[] {
+  return families.map((family) => family.name)
+}
+
 export async function readCatalog(): Promise<Catalog> {
   const raw = await readFile(CATALOG_PATH, "utf8")
   return JSON.parse(raw) as Catalog
+}
+
+export async function readMergedCatalog(): Promise<Catalog> {
+  const catalog = await readCatalog()
+  if (!blobEnabled()) return catalog
+  try {
+    const extra = await listBlobEntries()
+    const ids = new Set(catalog.entries.map((entry) => entry.id))
+    const fresh = extra.filter((entry) => !ids.has(entry.id))
+    return { ...catalog, entries: [...catalog.entries, ...fresh] }
+  } catch (error) {
+    console.error("Blob entries could not be read", error)
+    return catalog
+  }
 }
 
 async function writeCatalog(catalog: Catalog): Promise<void> {
@@ -53,10 +79,32 @@ export function isEmptyField(value: string | string[]): boolean {
   return value === ""
 }
 
+function blankEntry(input: {
+  id: string
+  relativePath: string
+  checksum: string
+}): Entry {
+  return {
+    id: input.id,
+    filename: input.relativePath,
+    checksum: input.checksum,
+    title: "",
+    vibe: "",
+    description: "",
+    family: "",
+    tags: [],
+    recipe: "",
+    uiNotes: "",
+    status: "pending",
+    createdAt: new Date().toISOString(),
+  }
+}
+
 export async function ingestPending(input: {
   id: string
   relativePath: string
   bytes: Buffer
+  contentType: string
 }): Promise<{ entry: Entry } | { duplicate: true; existingId: string }> {
   return withCatalogLock(async () => {
     const catalog = await readCatalog()
@@ -66,27 +114,63 @@ export async function ingestPending(input: {
       return { duplicate: true, existingId: existing.id }
     }
 
+    if (blobEnabled()) {
+      const blobEntries = await listBlobEntries()
+      const blobExisting = blobEntries.find((entry) => entry.checksum === checksum)
+      if (blobExisting) {
+        return { duplicate: true, existingId: blobExisting.id }
+      }
+      const entry = blankEntry({
+        id: input.id,
+        relativePath: input.relativePath,
+        checksum,
+      })
+      await putBlobImage(input.relativePath, input.bytes, input.contentType)
+      try {
+        await putBlobEntry(entry)
+      } catch (error) {
+        await deleteBlobPlate(entry).catch(() => undefined)
+        throw error
+      }
+      return { entry }
+    }
+
     const absolute = resolveImagePath(input.relativePath)
     await mkdir(path.dirname(absolute), { recursive: true })
     await writeFile(absolute, input.bytes)
 
-    const entry: Entry = {
+    const entry = blankEntry({
       id: input.id,
-      filename: input.relativePath,
+      relativePath: input.relativePath,
       checksum,
-      title: "",
-      vibe: "",
-      description: "",
-      family: "",
-      tags: [],
-      recipe: "",
-      status: "pending",
-      createdAt: new Date().toISOString(),
-    }
+    })
     catalog.entries.push(entry)
     await writeCatalog(catalog)
     return { entry }
   })
+}
+
+function applyResult(
+  entry: Entry,
+  result: ClassifyResult,
+  names: Set<string>,
+  mode: "fill-empty" | "overwrite",
+): string | null {
+  if (!names.has(result.family)) {
+    return `Unknown family: ${result.family}`
+  }
+
+  const overwrite = mode === "overwrite"
+  if (overwrite || isEmptyField(entry.title)) entry.title = result.title
+  if (overwrite || isEmptyField(entry.vibe)) entry.vibe = result.vibe
+  if (overwrite || isEmptyField(entry.description)) entry.description = result.description
+  if (overwrite || isEmptyField(entry.family)) entry.family = result.family
+  if (overwrite || isEmptyField(entry.tags)) entry.tags = result.tags
+  if (overwrite || isEmptyField(entry.recipe)) entry.recipe = result.recipe
+  if (overwrite || isEmptyField(entry.uiNotes)) entry.uiNotes = result.uiNotes
+  entry.status = "ready"
+  delete entry.error
+  return null
 }
 
 export async function applyClassify(
@@ -96,8 +180,26 @@ export async function applyClassify(
 ): Promise<Entry | null> {
   return withCatalogLock(async () => {
     const catalog = await readCatalog()
+    const names = new Set(familyNames(catalog.families))
     const entry = catalog.entries.find((item) => item.id === id)
-    if (!entry) return null
+
+    if (!entry) {
+      if (!blobEnabled()) return null
+      const blobEntry = await readBlobEntry(id)
+      if (!blobEntry) return null
+      if ("error" in result) {
+        blobEntry.status = "error"
+        blobEntry.error = result.error
+      } else {
+        const problem = applyResult(blobEntry, result, names, mode)
+        if (problem) {
+          blobEntry.status = "error"
+          blobEntry.error = problem
+        }
+      }
+      await putBlobEntry(blobEntry)
+      return blobEntry
+    }
 
     if ("error" in result) {
       entry.status = "error"
@@ -106,55 +208,50 @@ export async function applyClassify(
       return entry
     }
 
-    const families = new Set(catalog.families)
-    const family = families.has(result.family) ? result.family : "Unfiled"
-
-    if (mode === "overwrite") {
-      entry.title = result.title
-      entry.vibe = result.vibe
-      entry.description = result.description
-      entry.family = family
-      entry.tags = result.tags
-      entry.recipe = result.recipe
-    } else {
-      if (isEmptyField(entry.title)) entry.title = result.title
-      if (isEmptyField(entry.vibe)) entry.vibe = result.vibe
-      if (isEmptyField(entry.description)) entry.description = result.description
-      if (isEmptyField(entry.family)) entry.family = family
-      if (isEmptyField(entry.tags)) entry.tags = result.tags
-      if (isEmptyField(entry.recipe)) entry.recipe = result.recipe
+    const problem = applyResult(entry, result, names, mode)
+    if (problem) {
+      entry.status = "error"
+      entry.error = problem
     }
-
-    entry.status = "ready"
-    delete entry.error
     await writeCatalog(catalog)
     return entry
   })
 }
 
-export async function patchEntry(
-  id: string,
-  patch: Partial<Pick<Entry, (typeof PATCH_FIELDS)[number]>>,
-): Promise<Entry | null> {
+type EntryPatch = Partial<Pick<Entry, (typeof PATCH_FIELDS)[number]>>
+
+function applyPatch(entry: Entry, patch: EntryPatch, names: string[]) {
+  if (patch.title !== undefined) entry.title = patch.title
+  if (patch.vibe !== undefined) entry.vibe = patch.vibe
+  if (patch.description !== undefined) entry.description = patch.description
+  if (patch.tags !== undefined) entry.tags = patch.tags
+  if (patch.recipe !== undefined) entry.recipe = patch.recipe
+  if (patch.uiNotes !== undefined) entry.uiNotes = patch.uiNotes
+  if (patch.family !== undefined) {
+    if (patch.family !== "" && !names.includes(patch.family)) {
+      throw new Error("Unknown family")
+    }
+    entry.family = patch.family
+  }
+}
+
+export async function patchEntry(id: string, patch: EntryPatch): Promise<Entry | null> {
   return withCatalogLock(async () => {
     const catalog = await readCatalog()
+    const names = familyNames(catalog.families)
     const entry = catalog.entries.find((item) => item.id === id)
-    if (!entry) return null
-
-    if (patch.title !== undefined) entry.title = patch.title
-    if (patch.vibe !== undefined) entry.vibe = patch.vibe
-    if (patch.description !== undefined) entry.description = patch.description
-    if (patch.tags !== undefined) entry.tags = patch.tags
-    if (patch.recipe !== undefined) entry.recipe = patch.recipe
-    if (patch.family !== undefined) {
-      if (patch.family !== "" && !catalog.families.includes(patch.family)) {
-        throw new Error("Unknown family")
-      }
-      entry.family = patch.family
+    if (entry) {
+      applyPatch(entry, patch, names)
+      await writeCatalog(catalog)
+      return entry
     }
 
-    await writeCatalog(catalog)
-    return entry
+    if (!blobEnabled()) return null
+    const blobEntry = await readBlobEntry(id)
+    if (!blobEntry) return null
+    applyPatch(blobEntry, patch, names)
+    await putBlobEntry(blobEntry)
+    return blobEntry
   })
 }
 
@@ -162,7 +259,13 @@ export async function deleteEntry(id: string): Promise<boolean> {
   return withCatalogLock(async () => {
     const catalog = await readCatalog()
     const index = catalog.entries.findIndex((item) => item.id === id)
-    if (index === -1) return false
+    if (index === -1) {
+      if (!blobEnabled()) return false
+      const blobEntry = await readBlobEntry(id)
+      if (!blobEntry) return false
+      await deleteBlobPlate(blobEntry)
+      return true
+    }
     const [removed] = catalog.entries.splice(index, 1)
     await writeCatalog(catalog)
     try {

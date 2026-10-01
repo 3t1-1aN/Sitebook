@@ -3,9 +3,11 @@ import path from "node:path"
 
 import { NextResponse } from "next/server"
 
+import { blobEnabled, isBlobImagePath, readBlobImage } from "@/lib/blob-entries"
 import { resolveImagePath } from "@/lib/catalog"
 
 export const runtime = "nodejs"
+export const dynamic = "force-dynamic"
 
 const TYPES: Record<string, string> = {
   ".png": "image/png",
@@ -20,6 +22,26 @@ export async function GET(
 ) {
   const { path: parts } = await context.params
   const relative = parts.join("/")
+
+  if (isBlobImagePath(relative)) {
+    if (!blobEnabled()) {
+      return NextResponse.json({ error: "Not found" }, { status: 404 })
+    }
+    try {
+      const image = await readBlobImage(relative)
+      if (!image) return NextResponse.json({ error: "Not found" }, { status: 404 })
+      const ext = path.extname(relative).toLowerCase()
+      return new NextResponse(image.stream, {
+        headers: {
+          "Content-Type": image.contentType || TYPES[ext] || "application/octet-stream",
+          "Cache-Control": "private, max-age=3600",
+        },
+      })
+    } catch {
+      return NextResponse.json({ error: "Not found" }, { status: 404 })
+    }
+  }
+
   try {
     const absolute = resolveImagePath(relative)
     const bytes = await readFile(absolute)

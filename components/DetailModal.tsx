@@ -3,13 +3,19 @@
 import { useEffect, useState } from "react"
 
 import { copyBrief, copyImagePrompt } from "@/lib/copy"
-import type { Entry } from "@/lib/types"
+import type { Entry, Family } from "@/lib/types"
+
+import { FamilyNotes } from "./FamilyNotes"
+
+type EntryPatch = Partial<
+  Pick<Entry, "title" | "vibe" | "description" | "family" | "tags" | "recipe" | "uiNotes">
+>
 
 type DetailModalProps = {
   entry: Entry
-  families: string[]
+  families: Family[]
   onClose: () => void
-  onChange: (id: string, patch: Partial<Pick<Entry, "title" | "vibe" | "description" | "family" | "tags" | "recipe">>) => Promise<void>
+  onChange: (id: string, patch: EntryPatch) => Promise<void>
   onDelete: (id: string) => Promise<void>
 }
 
@@ -26,6 +32,7 @@ export function DetailModal({
   const [family, setFamily] = useState(entry.family)
   const [tags, setTags] = useState(entry.tags)
   const [recipe, setRecipe] = useState(entry.recipe)
+  const [uiNotes, setUiNotes] = useState(entry.uiNotes)
   const [tagDraft, setTagDraft] = useState("")
   const [copied, setCopied] = useState<string | null>(null)
   const [confirmDelete, setConfirmDelete] = useState(false)
@@ -37,12 +44,11 @@ export function DetailModal({
     setFamily(entry.family)
     setTags(entry.tags)
     setRecipe(entry.recipe)
+    setUiNotes(entry.uiNotes)
     setConfirmDelete(false)
   }, [entry])
 
-  async function persist(
-    patch: Partial<Pick<Entry, "title" | "vibe" | "description" | "family" | "tags" | "recipe">>,
-  ) {
+  async function persist(patch: EntryPatch) {
     await onChange(entry.id, patch)
   }
 
@@ -64,7 +70,8 @@ export function DetailModal({
     void persist({ tags: updated })
   }
 
-  const displayTitle = title || "Untitled"
+  const displayTitle = title || (entry.status === "pending" ? "Unclassified" : "Untitled")
+  const selectedFamily = families.find((item) => item.name === family)
 
   return (
     <div className="fixed inset-0 z-20 flex items-start justify-center overflow-y-auto bg-[#161412]/45 px-4 py-10">
@@ -89,7 +96,7 @@ export function DetailModal({
               value={title}
               onChange={(event) => setTitle(event.target.value)}
               onBlur={() => persist({ title })}
-              placeholder="Untitled"
+              placeholder="Unclassified"
               className="w-full bg-transparent font-serif text-[3rem] leading-[1.05] tracking-tight text-ink outline-none"
             />
             <input
@@ -149,18 +156,32 @@ export function DetailModal({
               }}
               className="mt-1 block w-full border border-rule bg-paper px-3 py-2 font-serif text-[15px] text-ink"
             >
-              {family === "" ? <option value="">Unfiled</option> : null}
-              {families.map((name) => (
-                <option key={name} value={name}>
-                  {name}
+              <option value="">Unclassified</option>
+              {families.map((item) => (
+                <option key={item.name} value={item.name}>
+                  {item.name}
                 </option>
               ))}
             </select>
           </label>
 
+          {selectedFamily ? <FamilyNotes family={selectedFamily} /> : null}
+
+          <label className="block text-[12px] text-ink-soft">
+            UI notes
+            <textarea
+              value={uiNotes}
+              onChange={(event) => setUiNotes(event.target.value)}
+              onBlur={() => persist({ uiNotes })}
+              placeholder="Navigation, type, buttons, and layout. Kept out of the image recipe."
+              rows={4}
+              className="mt-1 w-full resize-y border border-rule bg-paper px-3 py-2 text-[13px] leading-relaxed text-ink outline-none"
+            />
+          </label>
+
           <section className="border border-rule bg-recipe p-4">
             <p className="mb-3 text-[11px] uppercase tracking-[0.08em] text-accent">
-              Image recipe — fill [SUBJECT], send to Higgsfield gpt_image_2 @ 2K
+              Image recipe. Fill [SUBJECT], send to Higgsfield gpt_image_2 @ 2K
             </p>
             <textarea
               value={recipe}
@@ -173,7 +194,7 @@ export function DetailModal({
 
           {entry.status === "pending" ? (
             <p className="text-[12px] text-ink-soft">
-              Waiting for plate notes. Run /classify to file this plate.
+              Unclassified. Run /classify to file this plate.
             </p>
           ) : null}
 
@@ -183,7 +204,10 @@ export function DetailModal({
               onClick={() =>
                 copy(
                   "brief",
-                  copyBrief({ ...entry, title, vibe, description, family, tags, recipe }),
+                  copyBrief(
+                    { ...entry, title, vibe, description, family, tags, recipe, uiNotes },
+                    selectedFamily,
+                  ),
                 )
               }
               className="bg-ink px-4 py-2 text-[11px] uppercase tracking-[0.08em] text-paper active:scale-[0.98]"

@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Sitebook",
-  description: "Local website inspiration catalog",
+  description: "Private website inspiration catalog",
 }
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

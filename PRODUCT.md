@@ -8,37 +8,41 @@ web
 
 ## Users
 
-The builder who owns this machine. They collect website screenshots and later start new sites from those visual families.
+Ethan. He collects website screenshots on his own machine and on his private deploy, then starts new sites from those visual families.
 
 ## Product Purpose
 
-Sitebook is a private localhost catalog. Drop a screenshot, file it into a small family list, and copy a short Image Recipe so a later AI pass can recreate that look. Success is: find a type, copy a brief or recipe, start the next site from your own pile.
+Sitebook is Ethan's private inspiration catalog. Drop a screenshot, file it into an aesthetic family, and copy a brief or an image recipe. Success is: find a family, copy the four-part brief or the background recipe, and start the next site from his own pile.
 
 ## Positioning
 
-The unit is a named style plate (title, vibe, tags, family, `[SUBJECT: …]` recipe), not a public screenshot gallery and not a site generator.
+The unit is a named style plate (title, blend line, concept, tags, family, UI notes, `[SUBJECT: …]` recipe). It is not a public gallery and not a site generator.
 
 ## Operating Context
 
-Used on this computer via `npm run dev`. Images stay under `data/images/`. Metadata stays in `data/catalog.json`. Drop saves the file as pending. Run `/classify` to file title, family, tags, and recipe. Recipes name Higgsfield `gpt_image_2` @ 2K as chrome only; v1 copies text, it does not send.
+Local use is `npm run dev`. The 21 filed plates and their metadata stay in `data/catalog.json`. Their images stay under `data/images/`.
+
+The private Vercel deploy cannot keep new files on disk. New uploads go to a private Vercel Blob store after a server-side passcode check (`SITEBOOK_PASSCODE`). Viewing stays open. Without `BLOB_READ_WRITE_TOKEN`, local drops still save to the filesystem.
+
+Drop saves an unclassified plate. Run `/classify` to file the blend line, concept, tags, recipe, and UI notes. Style names come from `docs/design-styles.md`. Copy brief is four parts: aesthetic, reference, intent, and guardrails. Copy image prompt returns the recipe. Recipes name Higgsfield `gpt_image_2` @ 2K in the plate UI. v1 copies text. It does not send.
 
 ## Capabilities and Constraints
 
-- Drop PNG / JPEG / WebP. No HEIC. No URL capture. No accounts. No cloud. No OpenAI classify key.
-- Families are a small editable list in `catalog.json`.
+- Drop PNG / JPEG / WebP. No HEIC. No URL capture. No accounts. No public storage product. No OpenAI classify key.
+- Families are a small list in `catalog.json`, each with a definition and always/never rules.
 - Five-site generation, family pack export, and Higgsfield send are later.
 
 ## Brand Commitments
 
-Name: Sitebook. Binding visual refs: `docs/refs/index-grid.png` and `docs/refs/detail-stillness.png` (print catalog, serif title, mono metadata, cream paper, red family mark).
+Name: Sitebook. The catalog UI is cream paper, a serif title, mono metadata, and a red family mark.
 
 ## Evidence on Hand
 
-Three fixture plates (Stillpage, SPADE, Stillness) plus the two reference screenshots. Do not invent testimonials or a public audience.
+Twenty-one of Ethan's screenshots, filed by looking at each one. Do not invent testimonials or a public audience. Do not load the sample plates Stillpage, SPADE, or Stillness.
 
 ## Product Principles
 
-- The screenshot is not the product; the plate (image + recipe) is.
-- Local files stay local.
+- The screenshot is not the product. The plate (image, family, recipe, brief) is.
+- Files stay files. Blob is only for new plates on the private deploy.
 - Copy is the v1 payoff.
 - Keep the later five-site hook in the record shape, not in the UI.
